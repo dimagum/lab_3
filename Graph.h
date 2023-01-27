@@ -54,21 +54,13 @@ public:
     /*!
      * \brief Оператор копирующего присваивания
      */
-     Graph<key_type, value_type, weight_type>& operator=(const Graph<key_type, value_type, weight_type>& rhs) {
-         graph = rhs.graph;
-
-         return *this;
-     }
+     Graph<key_type, value_type, weight_type>& operator=(const Graph<key_type, value_type, weight_type>& rhs) = default;
 
     /*!
      * \brief Опервтор перемещающего присваивания
      */
 
-    Graph<key_type, value_type, weight_type>& operator=(Graph<key_type, value_type, weight_type>&& rhs) noexcept {
-        graph = rhs.graph;
-
-        return *this;
-    }
+    Graph<key_type, value_type, weight_type>& operator=(Graph<key_type, value_type, weight_type>&& rhs) noexcept = default;
 
 };
 
