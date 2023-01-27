@@ -11,7 +11,7 @@ class Graph {
     *  \brief Внутренний класс узла
     */
     class Node {
-        value_type value;
+        value_type val;
         std::map<key_type, weight_type> edges;
 
     public:
@@ -28,6 +28,33 @@ class Graph {
         *  \brief Конструктор перемещения
         */
         Node(Node&& other)  noexcept = default;
+
+
+        /*!
+         * \brief Проверка на пустоту узла
+         */
+        bool empty() {
+            return edges.empty();
+        }
+        /*!
+         * \brief Количество исходящих рёбер
+         */
+        size_t size() {
+            return edges.size();
+        }
+        /*!
+         * \brief Значение в узле
+         */
+        value_type& value() {
+            return val;
+        }
+        /*!
+         * \brief Удаление исходящих рёбер
+         */
+        void clear() {
+            edges.clear();
+        }
+
     };
 
     std::map<key_type, Node> graph;
@@ -52,9 +79,36 @@ public:
      Graph<key_type, value_type, weight_type>& operator=(const Graph<key_type, value_type, weight_type>& rhs) = default;
 
     /*!
-     * \brief Опервтор перемещающего присваивания
+     * \brief Оператор перемещающего присваивания
      */
     Graph<key_type, value_type, weight_type>& operator=(Graph<key_type, value_type, weight_type>&& rhs) noexcept = default;
+
+
+
+    /*!
+     * \brief Проверка на пустоту графа
+     */
+    bool empty() {
+        return graph.empty();
+    }
+    /*!
+     * \brief Количество узлов в графе
+     */
+    size_t size() {
+        return graph.size();
+    }
+    /*!
+     * \brief Удаление графа
+     */
+    void clear() {
+        graph.clear();
+    }
+    /*!
+     * \brief ? swap ?
+     */
+    void swap(Graph<key_type, value_type, weight_type>& g) {
+        // ?
+    }
 
 };
 
