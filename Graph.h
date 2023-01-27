@@ -23,6 +23,20 @@ class Graph {
             value = 0;
             edges = std::map<key_type, weight_type>();
         }
+        /*!
+        *  \brief Конструктор копирования
+        */
+        Node(const Node& other) {
+            value = other.value;
+            edges = other.edges;
+        }
+        /*!
+        *  \brief Конструктор перемещения
+        */
+        Node(Node&& other) noexcept {
+            value = other.value;
+            edges = other.edges;
+        }
     };
 
     std::map<key_type, Node> graph;
