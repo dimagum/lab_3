@@ -19,10 +19,7 @@ class Graph {
         /*!
         *  \brief Дефолтный конструктор
         */
-        Node() {
-            value = 0;
-            edges = std::map<key_type, weight_type>();
-        }
+        Node() = default;
         /*!
         *  \brief Конструктор копирования
         */
@@ -39,9 +36,7 @@ public:
     /*!
     * \brief Дефолтный конструктор
     */
-    Graph() {
-        graph = std::map<key_type, Node>();
-    }
+    Graph() = default;
     /*!
      * \brief Конструктор копирования
      */
@@ -59,7 +54,6 @@ public:
     /*!
      * \brief Опервтор перемещающего присваивания
      */
-
     Graph<key_type, value_type, weight_type>& operator=(Graph<key_type, value_type, weight_type>&& rhs) noexcept = default;
 
 };
