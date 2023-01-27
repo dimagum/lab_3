@@ -26,17 +26,11 @@ class Graph {
         /*!
         *  \brief Конструктор копирования
         */
-        Node(const Node& other) {
-            value = other.value;
-            edges = other.edges;
-        }
+        Node(const Node& other) = default;
         /*!
         *  \brief Конструктор перемещения
         */
-        Node(Node&& other) noexcept {
-            value = other.value;
-            edges = other.edges;
-        }
+        Node(Node&& other)  noexcept = default;
     };
 
     std::map<key_type, Node> graph;
@@ -51,14 +45,30 @@ public:
     /*!
      * \brief Конструктор копирования
      */
-    Graph(const Graph<key_type, value_type, weight_type>& other) {
-        graph = other.graph;
-    }
+    Graph(const Graph<key_type, value_type, weight_type>& other) = default;
     /*!
      * \brief Конструктор перемещения
      */
-    Graph(Graph<key_type, value_type, weight_type>&& other) noexcept {
-        graph = other.graph;
+    Graph(Graph<key_type, value_type, weight_type>&& other) noexcept = default;
+
+    /*!
+     * \brief Оператор копирующего присваивания
+     */
+     Graph<key_type, value_type, weight_type>& operator=(const Graph<key_type, value_type, weight_type>& rhs) {
+         graph = rhs.graph;
+
+         return *this;
+     }
+
+    /*!
+     * \brief Опервтор перемещающего присваивания
+     */
+
+    Graph<key_type, value_type, weight_type>& operator=(Graph<key_type, value_type, weight_type>&& rhs) noexcept {
+        graph = rhs.graph;
+
+        return *this;
     }
+
 };
 
