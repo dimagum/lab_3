@@ -157,13 +157,13 @@ public:
         return graph.end();
     }
     /*!
-     * \brief Итератор cbegin
+     * \brief Константный итератор cbegin
      */
     const_iterator cbegin() {
         return graph.cbegin();
     }
     /*!
-     * \brief Итератор cend
+     * \brief Константный итератор cend
      */
     const_iterator cend() {
         return graph.cend();
@@ -182,7 +182,7 @@ public:
         size_t result = 0;
 
         for (auto &item : graph) {
-            if (item.edges.contains(key)) {
+            if (item.second.find(key) != item.second.end()) {
                 result++;
             }
         }
