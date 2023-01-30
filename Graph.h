@@ -3,13 +3,16 @@
 #include <map>
 
 /*!
- *  \brief Шаблонный класс графа
+ * \brief Шаблонный класс графа
+ * @tparam key_type
+ * @tparam value_type
+ * @tparam weight_type
  */
 template<typename key_type, typename value_type, typename weight_type>
 class Graph {
     /*!
-    *  \brief Внутренний класс узла
-    */
+     * \brief Внутренний класс узла
+     */
     class Node {
         value_type val;
         std::map<key_type, weight_type> edges;
@@ -17,33 +20,38 @@ class Graph {
     public:
 
         /*!
-        *  \brief Дефолтный конструктор
-        */
+         * \brief Дефолтный конструктор
+         */
         Node() = default;
         /*!
-        *  \brief Конструктор копирования
-        */
+         * \brief Конструктор копирования
+         * @param other
+         */
         Node(const Node& other) = default;
         /*!
-        *  \brief Конструктор перемещения
-        */
+         * \brief Конструктор перемещения
+         * @param other
+         */
         Node(Node&& other)  noexcept = default;
 
 
         /*!
          * \brief Проверка на пустоту узла
+         * @return
          */
         bool empty() {
             return edges.empty();
         }
         /*!
          * \brief Количество исходящих рёбер
+         * @return
          */
         size_t size() {
             return edges.size();
         }
         /*!
          * \brief Значение в узле
+         * @return
          */
         value_type& value() {
             return val;
@@ -59,29 +67,38 @@ class Graph {
 
         /*!
          * \brief Итератор begin
+         * @return
          */
         iterator begin() {
             return edges.begin();
         }
         /*!
          * \brief Итератор end
+         * @return
          */
         iterator end() {
             return edges.end();
         }
         /*!
          * \brief Итератор begin
+         * @return
          */
         iterator cbegin() {
             return edges.cbegin();
         }
         /*!
          * \brief Итератор end
+         * @return
          */
         iterator cend() {
             return edges.cend();
         }
-
+        /*!
+         * \brief Оператор сравнения ==
+         * @param lhs
+         * @param rhs
+         * @return
+         */
         friend bool operator==(const Node& lhs, const Node& rhs) {
             return lhs.size() == rhs.size() && std::equal(lhs.begin(), lhs.end(), rhs.begin());
         }
@@ -92,25 +109,31 @@ class Graph {
 
 public:
     /*!
-    * \brief Дефолтный конструктор
-    */
+     * \brief Дефолтный конструктор
+     */
     Graph() = default;
     /*!
      * \brief Конструктор копирования
+     * @param other
      */
     Graph(const Graph<key_type, value_type, weight_type>& other) = default;
     /*!
      * \brief Конструктор перемещения
+     * @param other
      */
     Graph(Graph<key_type, value_type, weight_type>&& other) noexcept = default;
 
     /*!
      * \brief Оператор копирующего присваивания
+     * @param rhs
+     * @return
      */
      Graph<key_type, value_type, weight_type>& operator=(const Graph<key_type, value_type, weight_type>& rhs) = default;
 
     /*!
      * \brief Оператор перемещающего присваивания
+     * @param rhs
+     * @return
      */
     Graph<key_type, value_type, weight_type>& operator=(Graph<key_type, value_type, weight_type>&& rhs) noexcept = default;
 
@@ -118,12 +141,14 @@ public:
 
     /*!
      * \brief Проверка на пустоту графа
+     * @return
      */
     bool empty() {
         return graph.empty();
     }
     /*!
      * \brief Количество узлов в графе
+     * @return
      */
     size_t size() {
         return graph.size();
@@ -136,6 +161,7 @@ public:
     }
     /*!
      * \brief ? swap ?
+     * @param g
      */
     void swap(Graph<key_type, value_type, weight_type>& g) {
         // ?
@@ -146,24 +172,28 @@ public:
 
     /*!
      * \brief Итератор begin
+     * @return
      */
     iterator begin() {
         return graph.begin();
     }
     /*!
      * \brief Итератор end
+     * @return
      */
     iterator end() {
         return graph.end();
     }
     /*!
      * \brief Константный итератор cbegin
+     * @return
      */
     const_iterator cbegin() {
         return graph.cbegin();
     }
     /*!
      * \brief Константный итератор cend
+     * @return
      */
     const_iterator cend() {
         return graph.cend();
@@ -173,6 +203,8 @@ public:
 
     /*!
      * \brief Степень (входящие рёбра)
+     * @param key
+     * @return
      */
     size_t degree_in(key_type key) {
         if (graph.find(key) == graph.end()) {
@@ -181,7 +213,7 @@ public:
 
         size_t result = 0;
 
-        for (auto &item : graph) {
+        for (auto& item : graph) {
             if (item.second.find(key) != item.second.end()) {
                 result++;
             }
@@ -191,6 +223,8 @@ public:
     }
     /*!
      * \brief Степень (выходящие рёбра)
+     * @param key
+     * @return
      */
     size_t degree_out(key_type key) {
         if (graph.find(key) == graph.end()) {
@@ -201,6 +235,8 @@ public:
     }
     /*!
      * \brief Проверка на наличие петли
+     * @param key
+     * @return
      */
     bool loop(key_type key) {
         if (graph.find(key) == graph.end()) {
@@ -214,6 +250,12 @@ public:
         return false;
     }
 
+
+    /*!
+     * \brief Доступ к элементу по ключу
+     * @param key
+     * @return
+     */
     Node& operator[](key_type key) {
         if (graph.find(key) == graph.end()) {
             graph[key] = Node();
@@ -223,6 +265,12 @@ public:
         return graph[key];
     }
 
+
+    /*!
+     * \brief Доступ к элементу по ключу
+     * @param key
+     * @return
+     */
     Node& at(key_type key) {
         if (graph.find(key) == graph.end()) {
             throw std::logic_error("no node with this key in the graph.");

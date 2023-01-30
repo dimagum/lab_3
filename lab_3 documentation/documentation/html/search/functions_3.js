@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['operator_3d_0',['operator=',['../da/d9a/class_graph.html#a38c1c1696f0005cb54b3d812b05a3a10',1,'Graph::operator=(const Graph&lt; key_type, value_type, weight_type &gt; &amp;rhs)=default'],['../da/d9a/class_graph.html#a0c4c2313662b2741002c485147f45213',1,'Graph::operator=(Graph&lt; key_type, value_type, weight_type &gt; &amp;&amp;rhs) noexcept=default']]]
+  ['degree_5fin_0',['degree_in',['../da/d9a/class_graph.html#ac080e07a5cee3fea8f11ea50976837df',1,'Graph']]],
+  ['degree_5fout_1',['degree_out',['../da/d9a/class_graph.html#a9cf8fab8ae9608c500b5452d1b563e21',1,'Graph']]]
 ];

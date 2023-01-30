@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['size_0',['size',['../da/d9a/class_graph.html#a8fab7b514febaaef5eeb8beaf22f4d3e',1,'Graph']]],
-  ['swap_1',['swap',['../da/d9a/class_graph.html#a34d5a820ffcd5595eb1cc31d43173379',1,'Graph']]]
+  ['empty_0',['empty',['../da/d9a/class_graph.html#a3ec38809c46d34e948de77e45710bacc',1,'Graph']]],
+  ['end_1',['end',['../da/d9a/class_graph.html#ac9f1c9278972246ab3641a7a5a6e2e7e',1,'Graph']]]
 ];
