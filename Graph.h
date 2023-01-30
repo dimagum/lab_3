@@ -279,5 +279,44 @@ public:
         return graph[key];
     }
 
+    /*!
+     * \brief Вставка узла (без переприсваивания)
+     * @param key
+     * @param val
+     * @return
+     */
+    std::pair<iterator, bool> insert_node(key_type key, value_type val){
+        Node tmp;
+        tmp.value() = val;
+        return graph.emplace(key, tmp);
+    }
+
+    /*!
+     * \brief Вставка узла (с переприсваиванием)
+     * @param key
+     * @param val
+     * @return
+     */
+    std::pair<iterator, bool> insert_or_align_node(key_type key, value_type val) {
+        if (graph.find(key) != graph.end()) {
+            graph[key].value() = val;
+            return std::pair<iterator, bool>(graph.find(key), false);
+        }
+
+        Node tmp;
+        tmp.value() = val;
+        return graph.emplace(key, tmp);
+    }
+
+    std::pair<iterator, bool> insert_edge(std::pair<key_type, key_type> keys, weight_type weight) {
+        if (graph.find(keys.first) == graph.end() || graph.find(keys.second) == graph.end()) {
+            throw std::logic_error("one of the keys is invalid.");
+        }
+
+        graph[keys.first][keys.second] = weight;
+
+        return std::pair<iterator, bool>(graph.begin(), true);
+    }
+
 };
 
