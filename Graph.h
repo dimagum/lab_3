@@ -55,6 +55,37 @@ class Graph {
             edges.clear();
         }
 
+        typedef std::map<key_type, weight_type>::iterator iterator;
+
+        /*!
+         * \brief Итератор begin
+         */
+        iterator begin() {
+            return edges.begin();
+        }
+        /*!
+         * \brief Итератор end
+         */
+        iterator end() {
+            return edges.end();
+        }
+        /*!
+         * \brief Итератор begin
+         */
+        iterator cbegin() {
+            return edges.cbegin();
+        }
+        /*!
+         * \brief Итератор end
+         */
+        iterator cend() {
+            return edges.cend();
+        }
+
+        friend bool operator==(const Node& lhs, const Node& rhs) {
+            return lhs.size() == rhs.size() && std::equal(lhs.begin(), lhs.end(), rhs.begin());
+        }
+
     };
 
     std::map<key_type, Node> graph;
@@ -108,6 +139,96 @@ public:
      */
     void swap(Graph<key_type, value_type, weight_type>& g) {
         // ?
+    }
+
+    typedef std::map<key_type, Node>::iterator iterator;
+    typedef std::map<key_type, Node>::const_iterator const_iterator;
+
+    /*!
+     * \brief Итератор begin
+     */
+    iterator begin() {
+        return graph.begin();
+    }
+    /*!
+     * \brief Итератор end
+     */
+    iterator end() {
+        return graph.end();
+    }
+    /*!
+     * \brief Итератор cbegin
+     */
+    const_iterator cbegin() {
+        return graph.cbegin();
+    }
+    /*!
+     * \brief Итератор cend
+     */
+    const_iterator cend() {
+        return graph.cend();
+    }
+
+
+
+    /*!
+     * \brief Степень (входящие рёбра)
+     */
+    size_t degree_in(key_type key) {
+        if (graph.find(key) == graph.end()) {
+            throw std::logic_error("no node with this key in the graph.");
+        }
+
+        size_t result = 0;
+
+        for (auto &item : graph) {
+            if (item.edges.contains(key)) {
+                result++;
+            }
+        }
+
+        return result;
+    }
+    /*!
+     * \brief Степень (выходящие рёбра)
+     */
+    size_t degree_out(key_type key) {
+        if (graph.find(key) == graph.end()) {
+            throw std::logic_error("no node with this key in the graph.");
+        }
+
+        return graph[key].edges.size();
+    }
+    /*!
+     * \brief Проверка на наличие петли
+     */
+    bool loop(key_type key) {
+        if (graph.find(key) == graph.end()) {
+            throw std::logic_error("no node with this key in the graph.");
+        }
+
+        if (graph[key].edges.find(key) != graph[key].edges.end()) {
+            return true;
+        }
+
+        return false;
+    }
+
+    Node& operator[](key_type key) {
+        if (graph.find(key) == graph.end()) {
+            graph[key] = Node();
+            return graph[key];
+        }
+
+        return graph[key];
+    }
+
+    Node& at(key_type key) {
+        if (graph.find(key) == graph.end()) {
+            throw std::logic_error("no node with this key in the graph.");
+        }
+
+        return graph[key];
     }
 
 };
