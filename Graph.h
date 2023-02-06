@@ -221,8 +221,8 @@ public:
 
         size_t result = 0;
 
-        for (auto& item : graph) {
-            if (item.second.find(key) != item.second.end()) {
+        for (auto& [node_key, node] : graph) {
+            if (node.edges.find(key) != node.edges.end()) {
                 result++;
             }
         }
@@ -324,23 +324,27 @@ public:
      */
     std::pair<iterator, bool> insert_edge(std::pair<key_type, key_type> keys, weight_type weight) {
         if (graph.find(keys.first) == graph.end() || graph.find(keys.second) == graph.end()) {
-            throw std::logic_error("one of the keys is invalid.");
+            throw std::logic_error("one of the keys is not in the graph.");
         }
 
-        graph[keys.first][keys.second] = weight;
+        graph[keys.first].edges[keys.second] = weight;
 
-        return std::pair<iterator, bool>(graph.begin(), true);
+        if (graph[keys.first].edges[keys.second] != graph[keys.first].edges.end()) {
+            return std::pair<iterator, bool>(graph.find(keys.first), false);
+        }
+
+        return std::pair<iterator, bool>(graph.find(keys.first), true);
     }
 
     /*!
-     *
+     * \brief Вставка ребра (без переприсваивания)
      * @param keys
      * @param weight
      * @return std::pair<iterator, bool>
      */
     std::pair<iterator, bool> insert_or_assign_edge(std::pair<key_type, key_type> keys, weight_type weight) {
         if (graph.find(keys.first) == graph.end() || graph.find(keys.second) == graph.end()) {
-            throw std::logic_error("one of the keys is invalid.");
+            throw std::logic_error("one of the keys is not in the graph.");
         }
 
         graph[keys.first][keys.second] = weight;
@@ -353,7 +357,7 @@ public:
      */
     void clear_edges() {
         for (auto& [node_key, node] : graph) {
-            node.clear();
+            node.edges.clear();
         }
     }
 
@@ -384,7 +388,7 @@ public:
         for (auto& [node_key, node] : graph) {
             for (auto& [go_to_key, weight] : node) {
                 if (go_to_key == key) {
-                    node.erase(node.find(key));
+                    node.edges.erase(node.find(key));
                 }
             }
         }
