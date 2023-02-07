@@ -293,7 +293,7 @@ public:
      * @param val
      * @return
      */
-    std::pair<iterator, bool> insert_node(key_type key, value_type val){
+    std::pair<iterator, bool> insert_node(key_type key, value_type val) {
         Node tmp;
         tmp.value() = val;
         return graph.emplace(key, tmp);
@@ -323,33 +323,36 @@ public:
      * @return std::pair<iterator, bool>
      */
     std::pair<iterator, bool> insert_edge(std::pair<key_type, key_type> keys, weight_type weight) {
-        if (graph.find(keys.first) == graph.end() || graph.find(keys.second) == graph.end()) {
+        key_type key_from = keys.first, key_to = keys.second;
+        if (graph.find(key_from) == graph.end() || graph.find(key_to) == graph.end()) {
             throw std::logic_error("one of the keys is not in the graph.");
         }
 
-        graph[keys.first].edges[keys.second] = weight;
-
-        if (graph[keys.first].edges[keys.second] != graph[keys.first].edges.end()) {
-            return std::pair<iterator, bool>(graph.find(keys.first), false);
+        if (graph[key_from].edges[key_to] != graph[key_from].edges.end()) {
+            return std::pair<iterator, bool>(graph.find(key_from), false);
         }
 
-        return std::pair<iterator, bool>(graph.find(keys.first), true);
+        return std::pair<iterator, bool>(graph.find(key_from), true);
     }
 
     /*!
-     * \brief Вставка ребра (без переприсваивания)
+     * \brief Вставка ребра (с переприсваиванием)
      * @param keys
      * @param weight
      * @return std::pair<iterator, bool>
      */
     std::pair<iterator, bool> insert_or_assign_edge(std::pair<key_type, key_type> keys, weight_type weight) {
-        if (graph.find(keys.first) == graph.end() || graph.find(keys.second) == graph.end()) {
+        key_type key_from = keys.first, key_to = keys.second;
+        if (graph.find(key_from) == graph.end() || graph.find(key_to) == graph.end()) {
             throw std::logic_error("one of the keys is not in the graph.");
         }
 
-        graph[keys.first][keys.second] = weight;
+        if (graph[key_from].edges[key_to] != graph[key_from].edges.end()) {
+            graph[key_from].edges[key_to] = weight;
+            return std::pair<iterator, bool>(graph.find(key_from), false);
+        }
 
-        return std::pair<iterator, bool>(graph.begin(), true);
+        return std::pair<iterator, bool>(graph.find(key_from), true);
     }
 
     /*!
