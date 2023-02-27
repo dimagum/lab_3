@@ -19,11 +19,11 @@ class Graph {
         std::map<key_type, weight_type> edges;
 
         std::pair<typename std::map<key_type, weight_type>::iterator, bool> insert_edge(key_type key, weight_type weight) {
-            return edges.emplace(key, weight);
+            return edges.insert(std::make_pair(key, weight));
         }
 
         std::pair<typename std::map<key_type, weight_type>::iterator, bool> insert_or_assign_edge(key_type key, weight_type weight) {
-            return edges.emplace(key, weight);
+            return edges.insert_or_assign(key, weight);
         }
 
     //public:
@@ -324,17 +324,17 @@ public:
      * @param weight
      * @return std::pair<iterator, bool>
      */
-    std::pair<iterator, bool> insert_edge(std::pair<key_type, key_type> keys, weight_type weight) {
+    std::pair<typename std::map<key_type, weight_type>::iterator, bool> insert_edge(std::pair<key_type, key_type> keys, weight_type weight) {
         key_type key_from = keys.first, key_to = keys.second;
-        if (graph.find(key_from) == graph.end() || graph.find(key_to) == graph.end()) {
-            throw std::logic_error("one of the keys is not in the graph.");
+        if (graph.find(key_from) == graph.end()) {
+            throw std::logic_error("node referencing to key_from is not in the graph.\n");
         }
 
-        if (graph[key_from].edges.find(key_to) != graph[key_from].edges.end()) {
-            return std::pair<iterator, bool>(graph.find(key_from), false);
+        if (graph.find(key_to) == graph.end()) {
+            throw std::logic_error("node referencing to key_to is not in the graph.\n");
         }
 
-        return std::pair<iterator, bool>(graph.find(key_from), true);
+        return graph[key_from].insert_edge(key_to, weight);
     }
 
     /*!
@@ -343,18 +343,17 @@ public:
      * @param weight
      * @return std::pair<iterator, bool>
      */
-    std::pair<iterator, bool> insert_or_assign_edge(std::pair<key_type, key_type> keys, weight_type weight) {
+    std::pair<typename std::map<key_type, weight_type>::iterator, bool> insert_or_assign_edge(std::pair<key_type, key_type> keys, weight_type weight) {
         key_type key_from = keys.first, key_to = keys.second;
-        if (graph.find(key_from) == graph.end() || graph.find(key_to) == graph.end()) {
-            throw std::logic_error("one of the keys is not in the graph.");
+        if (graph.find(key_from) == graph.end()) {
+            throw std::logic_error("node referencing to key_from is not in the graph.\n");
         }
 
-        if (graph[key_from].edges.find(key_to) != graph[key_from].edges.end()) {
-            graph[key_from].edges[key_to] = weight;
-            return std::pair<iterator, bool>(graph.find(key_from), false);
+        if (graph.find(key_to) == graph.end()) {
+            throw std::logic_error("node referencing to key_to is not in the graph.\n");
         }
 
-        return std::pair<iterator, bool>(graph.find(key_from), true);
+        return graph[key_from].insert_or_assign_edge(key_to, weight);
     }
 
     /*!

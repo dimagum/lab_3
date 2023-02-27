@@ -29,11 +29,11 @@ int main() {
 
     auto [it2, flag2] = graph.insert_edge(std::pair<int, int>(1, 1), 5);
 
-    std::cout << std::boolalpha << "[" << it2->first << "] = " << it2->second.value() << " " << flag2 << "\n";
+    std::cout << std::boolalpha << "[" << it2->first << "] = " << it2->second << " " << flag2 << "\n";
 
     auto [it3, flag3] = graph.insert_or_assign_edge(std::pair<int, int>(1, 1), 5);
 
-    std::cout << std::boolalpha << "[" << it3->first << "] = " << it3->second.value() << " " << flag3 << "\n";
+    std::cout << std::boolalpha << "[" << it3->first << "] = " << it3->second << " " << flag3 << "\n";
     // print(graph);
 
 
