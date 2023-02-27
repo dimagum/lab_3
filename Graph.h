@@ -43,6 +43,20 @@ class Graph {
          */
         Node(Node&& other)  noexcept = default;
 
+        /*!
+         * \brief Оператор копирующего присваивания
+         * @param rhs
+         * @return
+         */
+        Node& operator=(const Node& rhs) = default;
+
+        /*!
+         * \brief Оператор перемещающего присваивания
+         * @param rhs
+         * @return
+         */
+        Node& operator=(Node&& rhs)  noexcept = default;
+
 
         /*!
          * \brief Проверка на пустоту узла
@@ -262,7 +276,7 @@ public:
 
 
     /*!
-     * \brief Доступ к элементу по ключу
+     * \brief Доступ к узлу по ключу
      * @param key
      * @return
      */
