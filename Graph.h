@@ -14,6 +14,7 @@ class Graph {
      * \brief Внутренний класс узла
      */
     class Node {
+    public:
         value_type val;
         std::map<key_type, weight_type> edges;
 
@@ -25,7 +26,7 @@ class Graph {
             return edges.emplace(key, weight);
         }
 
-    public:
+    //public:
 
         /*!
          * \brief Дефолтный конструктор
@@ -61,7 +62,7 @@ class Graph {
          * \brief Значение в узле
          * @return
          */
-        value_type& value() {
+        value_type & value() {
             return val;
         }
         /*!
@@ -71,7 +72,8 @@ class Graph {
             edges.clear();
         }
 
-        typedef std::map<key_type, weight_type>::iterator iterator;
+        typedef typename std::map<key_type, weight_type>::iterator iterator;
+        typedef typename std::map<key_type, weight_type>::const_iterator const_iterator;
 
         /*!
          * \brief Итератор begin
@@ -91,14 +93,14 @@ class Graph {
          * \brief Итератор begin
          * @return
          */
-        iterator cbegin() {
+        const_iterator cbegin() const {
             return edges.cbegin();
         }
         /*!
          * \brief Итератор end
          * @return
          */
-        iterator cend() {
+        const_iterator cend() const {
             return edges.cend();
         }
         /*!
@@ -151,14 +153,14 @@ public:
      * \brief Проверка на пустоту графа
      * @return
      */
-    bool empty() {
+    constexpr bool empty() const noexcept {
         return graph.empty();
     }
     /*!
      * \brief Количество узлов в графе
      * @return
      */
-    size_t size() {
+    size_t size() const noexcept {
         return graph.size();
     }
     /*!
@@ -175,35 +177,35 @@ public:
         // ?
     }
 
-    typedef std::map<key_type, Node>::iterator iterator;
-    typedef std::map<key_type, Node>::const_iterator const_iterator;
+    typedef typename std::map<key_type, Node>::iterator iterator;
+    typedef typename std::map<key_type, Node>::const_iterator const_iterator;
 
     /*!
      * \brief Итератор begin
      * @return
      */
-    iterator begin() {
+    iterator begin() noexcept {
         return graph.begin();
     }
     /*!
      * \brief Итератор end
      * @return
      */
-    iterator end() {
+    iterator end() noexcept {
         return graph.end();
     }
     /*!
      * \brief Константный итератор cbegin
      * @return
      */
-    const_iterator cbegin() {
+    const_iterator cbegin() const {
         return graph.cbegin();
     }
     /*!
      * \brief Константный итератор cend
      * @return
      */
-    const_iterator cend() {
+    const_iterator cend() const {
         return graph.cend();
     }
 
@@ -328,7 +330,7 @@ public:
             throw std::logic_error("one of the keys is not in the graph.");
         }
 
-        if (graph[key_from].edges[key_to] != graph[key_from].edges.end()) {
+        if (graph[key_from].edges.find(key_to) != graph[key_from].edges.end()) {
             return std::pair<iterator, bool>(graph.find(key_from), false);
         }
 
@@ -347,7 +349,7 @@ public:
             throw std::logic_error("one of the keys is not in the graph.");
         }
 
-        if (graph[key_from].edges[key_to] != graph[key_from].edges.end()) {
+        if (graph[key_from].edges.find(key_to) != graph[key_from].edges.end()) {
             graph[key_from].edges[key_to] = weight;
             return std::pair<iterator, bool>(graph.find(key_from), false);
         }
