@@ -48,6 +48,14 @@ int main() {
         std::cout << std::boolalpha << false << "\n";
     }
 
+
+    if (graph[1].empty()) {
+        std::cout << std::boolalpha << true << "\n";
+    }
+    else {
+        std::cout << std::boolalpha << false << "\n";
+    }
+
     graph.clear_edges();
 
     if (graph[1].empty()) {
