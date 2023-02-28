@@ -29,7 +29,7 @@ int main() {
     std::cout << std::boolalpha << "[" << it1->first << "] = " << it1->second.value() << " " << flag1 <<"\n";
     std::cout << std::boolalpha << "[" << it11->first << "] = " << it11->second.value() << " " << flag1 <<"\n";
 
-    auto [it2, flag2] = graph.insert_edge(std::pair<int, int>(1, 1), 5);
+    auto [it2, flag2] = graph.insert_edge({1, 1}, 5);
 
     std::cout << std::boolalpha << "[" << it2->first << "] = " << it2->second << " " << flag2 << "\n";
 
@@ -48,6 +48,37 @@ int main() {
         std::cout << std::boolalpha << false << "\n";
     }
 
+    graph.insert_edge({2, 1}, 2);
+
+    if (graph[2].empty()) {
+        std::cout << std::boolalpha << true << "\n";
+    }
+    else {
+        std::cout << std::boolalpha << false << "\n";
+    }
+
+    std::cout << "erasing..." << "\n";
+
+    graph.erase_node(1);
+
+    if (graph[2].empty()) {
+        std::cout << std::boolalpha << true << "\n";
+    }
+    else {
+        std::cout << std::boolalpha << false << "\n";
+    }
+
+    graph.insert_node(1, 1);
+
+    if (graph[1].empty()) {
+        std::cout << std::boolalpha << true << "\n";
+    }
+    else {
+        std::cout << std::boolalpha << false << "\n";
+    }
+
+    graph.insert_edge({1, 1}, 5);
+    graph.insert_edge({2, 1}, 2);
 
     if (graph[1].empty()) {
         std::cout << std::boolalpha << true << "\n";
@@ -59,6 +90,13 @@ int main() {
     graph.clear_edges();
 
     if (graph[1].empty()) {
+        std::cout << std::boolalpha << true << "\n";
+    }
+    else {
+        std::cout << std::boolalpha << false << "\n";
+    }
+
+    if (graph.empty()) {
         std::cout << std::boolalpha << true << "\n";
     }
     else {

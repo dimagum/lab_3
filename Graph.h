@@ -442,9 +442,7 @@ public:
         }
 
         for (auto& [node_key, node] : graph) {
-            for (auto& [go_to_key, weight] : node) {
-                node.erase_edge(key);
-            }
+            node.erase_edge(key);
         }
         return true;
     }
@@ -460,9 +458,7 @@ public:
         }
 
         for (auto& [node_key, node] : graph) {
-            for (auto& [go_to_key, weight] : node) {
-                node.erase_edge(key);
-            }
+            node.erase_edge(key);
         }
 
         graph.erase(key);
