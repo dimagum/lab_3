@@ -1,6 +1,7 @@
 #pragma once
 
 #include <map>
+#include <limits>
 
 struct Point { double x, y, z; };
 std::ostream& operator << (std::ostream& out, Point p) {
@@ -145,6 +146,15 @@ class Graph {
         const_iterator cend() const {
             return edges.cend();
         }
+
+        weight_type& operator[](key_type key) {
+            return edges[key];
+        }
+
+        const weight_type& operator[](key_type key) const {
+            return edges[key];
+        }
+
         /*!
          * \brief Оператор сравнения ==
          * @param lhs
@@ -378,6 +388,14 @@ public:
         return graph[key];
     }
 
+    const Node& operator[](key_type key) const {
+        if (graph.find(key) == graph.end()) {
+            throw std::logic_error("no such node in graph.\n");
+        }
+
+        return graph.at(key);
+    }
+
 
     /*!
      * \brief Доступ к элементу по ключу
@@ -522,6 +540,52 @@ template<typename graph_t, typename weight_t, typename route_t, typename node_na
 std::pair<weight_t, route_t> dijkstra(const graph_t& graph, node_name_t key_from, node_name_t key_to) {
     route_t route;
     weight_t route_weight;
+
+    std::map<node_name_t, node_name_t> route_tmp;
+
+    const weight_t INF = std::numeric_limits<weight_t>::max();
+
+    route_tmp[key_from] = std::numeric_limits<node_name_t>::max();
+
+    std::map<node_name_t, weight_t> d;
+    std::map<node_name_t, bool> used;
+    for (auto [key, node] : graph) {
+        d[key] = INF;
+        used[key] = false;
+    }
+    d[key_from] = 0;
+
+    for (int i = 0; i < graph.size(); i++) {
+        node_name_t v = -1;
+
+        for (auto [key, weight] : graph) {
+            if (!used[key] && (v == -1 || d[key] < d[v])) {
+                v = key;
+            }
+        }
+
+        if (d[v] == INF) {
+            break;
+        }
+        used[v] = true;
+
+        for (auto [to, len] : graph[v]) {
+            if (d[v] + len < d[to]) {
+                d[to] = d[v] + len;
+                route_tmp[to] = v;
+            }
+        }
+    }
+
+    for (auto key = key_to; route_tmp[key] < std::numeric_limits<node_name_t>::max(); ) {
+        route.push_back(key);
+        key = route_tmp[key];
+    }
+
+    route.push_back(key_from);
+    std::reverse(route.begin(), route.end());
+
+    return std::pair<weight_t, route_t>(d[key_to], route);
 }
 
 template<typename graph_t, typename weight_t, typename route_out_iter_t, typename node_name_t>
