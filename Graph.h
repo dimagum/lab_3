@@ -536,6 +536,17 @@ public:
 
 };
 
+/*!
+ * \brief Алгоритм Дейкстры
+ * @tparam graph_t
+ * @tparam weight_t
+ * @tparam route_t
+ * @tparam node_name_t
+ * @param graph
+ * @param key_from
+ * @param key_to
+ * @return
+ */
 template<typename graph_t, typename weight_t, typename route_t, typename node_name_t>
 std::pair<weight_t, route_t> dijkstra(const graph_t& graph, node_name_t key_from, node_name_t key_to) {
     route_t route;
