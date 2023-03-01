@@ -2,6 +2,13 @@
 
 #include <map>
 
+struct Point { double x, y, z; };
+std::ostream& operator << (std::ostream& out, Point p) {
+    std::cout << '(' << p.x << ',' << p.y << ',' << p.z << ')';
+    return out;
+}
+
+
 /*!
  * \brief Шаблонный класс графа
  * @tparam key_type
@@ -34,6 +41,10 @@ class Graph {
          */
         Node(Node&& other)  noexcept = default;
 
+        explicit Node(const value_type& other) {
+            val = other;
+        }
+
         /*!
          * \brief Оператор копирующего присваивания
          * @param rhs
@@ -47,6 +58,11 @@ class Graph {
          * @return
          */
         Node& operator=(Node&& rhs)  noexcept = default;
+
+        Node& operator=(const value_type& other) {
+            val = other;
+            return *this;
+        }
 
 
         /*!
@@ -71,6 +87,13 @@ class Graph {
             return val;
         }
         /*!
+         * \brief Значение в узле
+         * @return
+         */
+        const value_type & value() const {
+            return val;
+        }
+        /*!
          * \brief Удаление исходящих рёбер
          */
         void clear() {
@@ -84,14 +107,28 @@ class Graph {
          * \brief Итератор begin
          * @return
          */
-        iterator begin() {
+        iterator begin() noexcept {
             return edges.begin();
         }
         /*!
          * \brief Итератор end
          * @return
          */
-        iterator end() {
+        iterator end() noexcept {
+            return edges.end();
+        }
+        /*!
+         * \brief Итератор begin
+         * @return
+         */
+        const_iterator begin() const noexcept {
+            return edges.begin();
+        }
+        /*!
+         * \brief Итератор end
+         * @return
+         */
+        const_iterator end() const noexcept {
             return edges.end();
         }
         /*!
@@ -244,6 +281,20 @@ public:
      * @return iterator
      */
     iterator end() noexcept {
+        return graph.end();
+    }
+    /*!
+     * \brief Итератор begin
+     * @return iterator
+     */
+    const_iterator begin() const noexcept {
+        return graph.begin();
+    }
+    /*!
+     * \brief Итератор end
+     * @return iterator
+     */
+    const_iterator end() const noexcept {
         return graph.end();
     }
     /*!
@@ -466,4 +517,17 @@ public:
     }
 
 };
+
+template<typename graph_t, typename weight_t, typename route_t, typename node_name_t>
+std::pair<weight_t, route_t> dijkstra(const graph_t& graph, node_name_t key_from, node_name_t key_to) {
+    route_t route;
+    weight_t route_weight;
+}
+
+template<typename graph_t, typename weight_t, typename route_out_iter_t, typename node_name_t>
+weight_t dijkstra_(const graph_t& graph, node_name_t key_from, node_name_t key_to, route_out_iter_t route_out_iter) {
+
+}
+
+
 
