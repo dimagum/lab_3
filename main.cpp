@@ -108,7 +108,7 @@ int main() {/*
     else {
         std::cout << std::boolalpha << false << "\n";
     }*/
-     /*
+    // /*
     {
         Graph<std::string, Point, double> graph;
         graph["zero"]; // Заполнится точкой, которая заполнится нулями
@@ -193,7 +193,10 @@ int main() {/*
         graph.clear(); // Очистить все вершины (очевидно, вместе с рёбрами)
         print(graph);
     }
-     */
+    //  */
+
+    std::cout << "\n";
+
     Graph<int, int, double> graph_for_dijkstra;
 
     graph_for_dijkstra.insert_node(0, 0);
@@ -222,6 +225,34 @@ int main() {/*
     }
     std::cout << "\n";
 
+    try {
+        auto [weight1, route1] = dijkstra<Graph<int, int, double>, double, std::vector<int>, int>(graph_for_dijkstra, 2, 5);
+    }
+    catch (const std::exception& e) {
+        std::cout << e.what() << "\n";
+    }
+
+    graph_for_dijkstra.insert_edge({4, 0}, -1.4);
+
+    try {
+        auto [weight2, route2] = dijkstra<Graph<int, int, double>, double, std::vector<int>, int>(graph_for_dijkstra, 2, 1);
+    }
+    catch (const std::exception& e) {
+        std::cout << e.what() << "\n";
+    }
+
+    graph_for_dijkstra.erase_edges_go_from(4);
+    graph_for_dijkstra.insert_edge({4, 3}, 1);
+    graph_for_dijkstra.insert_edge({4, 1}, 8);
+
+    graph_for_dijkstra.insert_node(5, 7);
+
+    try {
+        auto [weight3, route3] = dijkstra<Graph<int, int, double>, double, std::vector<int>, int>(graph_for_dijkstra, 2, 5);
+    }
+    catch (const std::exception& e) {
+        std::cout << e.what() << "\n";
+    }
 
     return 0;
 }

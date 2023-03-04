@@ -1,5 +1,9 @@
 var searchData=
 [
-  ['empty_0',['empty',['../da/d9a/class_graph.html#a3ec38809c46d34e948de77e45710bacc',1,'Graph']]],
-  ['end_1',['end',['../da/d9a/class_graph.html#ac9f1c9278972246ab3641a7a5a6e2e7e',1,'Graph']]]
+  ['empty_0',['empty',['../de/d99/class_graph_1_1_node.html#ada8f3a9acb7b20e6d2e585092b336b81',1,'Graph::Node::empty()'],['../da/d9a/class_graph.html#a248f732451fd734eb4c36db42880f190',1,'Graph::empty()']]],
+  ['end_1',['end',['../de/d99/class_graph_1_1_node.html#a927af8cc33567f4cc6ccb4968cb5584d',1,'Graph::Node::end() noexcept'],['../de/d99/class_graph_1_1_node.html#af555576884095f72c48d356b40f9a7c2',1,'Graph::Node::end() const noexcept'],['../da/d9a/class_graph.html#aa406ecc3ac62b38e1f1eda24e5ec205f',1,'Graph::end() noexcept'],['../da/d9a/class_graph.html#a56a67e8cb9859014dece170e1e27c1b7',1,'Graph::end() const noexcept']]],
+  ['erase_5fedge_2',['erase_edge',['../de/d99/class_graph_1_1_node.html#ab184773db68373944c522a4379b4e519',1,'Graph::Node']]],
+  ['erase_5fedges_5fgo_5ffrom_3',['erase_edges_go_from',['../da/d9a/class_graph.html#a3ffdb86c5fa435f6dfdc0403c4ebce62',1,'Graph']]],
+  ['erase_5fedges_5fgo_5fto_4',['erase_edges_go_to',['../da/d9a/class_graph.html#a8fed563e33cdc9eb51224e7c2af56265',1,'Graph']]],
+  ['erase_5fnode_5',['erase_node',['../da/d9a/class_graph.html#a628c03d78ad5824662fff8b587d9061d',1,'Graph']]]
 ];

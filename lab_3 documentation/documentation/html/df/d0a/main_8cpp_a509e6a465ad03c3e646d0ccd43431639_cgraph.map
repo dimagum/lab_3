@@ -1,0 +1,5 @@
+<map id="print" name="print">
+<area shape="rect" id="node1" title="Вывод графа в консоль" alt="" coords="5,31,52,56"/>
+<area shape="rect" id="node2" href="$da/d9a/class_graph.html#a248f732451fd734eb4c36db42880f190" title="Проверка на пустоту графа" alt="" coords="100,5,201,31"/>
+<area shape="rect" id="node3" href="$da/d9a/class_graph.html#a0839bb03a69f090d411ae6246d143b96" title="Количество узлов в графе" alt="" coords="106,55,195,80"/>
+</map>

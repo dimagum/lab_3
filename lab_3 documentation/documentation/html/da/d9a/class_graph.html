@@ -9,6 +9,10 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
@@ -48,6 +52,23 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('da/d9a/class_graph.html','../../'); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -69,12 +90,13 @@ $(function() {
 </div>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="#friends">Friends</a> &#124;
 <a href="../../d1/d1d/class_graph-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">Graph&lt; key_type, value_type, weight_type &gt; Class Template Reference</div></div>
 </div><!--header-->
@@ -89,24 +111,28 @@ Collaboration diagram for Graph&lt; key_type, value_type, weight_type &gt;:</div
 <div class="dyncontent">
 <div class="center"><img src="../../d1/dc2/class_graph__coll__graph.png" border="0" usemap="#a_graph_3_01key__type_00_01value__type_00_01weight__type_01_4_coll__map" alt="Collaboration graph"/></div>
 <map name="a_graph_3_01key__type_00_01value__type_00_01weight__type_01_4_coll__map" id="a_graph_3_01key__type_00_01value__type_00_01weight__type_01_4_coll__map">
-<area shape="rect" title="Шаблонный класс графа" alt="" coords="5,5,197,464"/>
+<area shape="rect" title="Шаблонный класс графа" alt="" coords="5,145,371,824"/>
+<area shape="rect" title=" " alt="" coords="85,5,291,83"/>
 </map>
 </div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d99/class_graph_1_1_node.html">Node</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Внутренний класс узла  <a href="../../de/d99/class_graph_1_1_node.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:ab0f6da23b75b55807ba43dd8d3b24385"><td class="memItemLeft" align="right" valign="top"><a id="ab0f6da23b75b55807ba43dd8d3b24385" name="ab0f6da23b75b55807ba43dd8d3b24385"></a>
-typedef std::map&lt; key_type, Node &gt;::iterator&#160;</td><td class="memItemRight" valign="bottom"><b>iterator</b></td></tr>
+<tr class="memitem:ab0f6da23b75b55807ba43dd8d3b24385"><td class="memItemLeft" align="right" valign="top">typedef std::map&lt; key_type, <a class="el" href="../../de/d99/class_graph_1_1_node.html">Node</a> &gt;::iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d9a/class_graph.html#ab0f6da23b75b55807ba43dd8d3b24385">iterator</a></td></tr>
 <tr class="separator:ab0f6da23b75b55807ba43dd8d3b24385"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acd8ab28e2f1d880ce081f236697376dd"><td class="memItemLeft" align="right" valign="top"><a id="acd8ab28e2f1d880ce081f236697376dd" name="acd8ab28e2f1d880ce081f236697376dd"></a>
-typedef std::map&lt; key_type, Node &gt;::const_iterator&#160;</td><td class="memItemRight" valign="bottom"><b>const_iterator</b></td></tr>
+<tr class="memitem:acd8ab28e2f1d880ce081f236697376dd"><td class="memItemLeft" align="right" valign="top">typedef std::map&lt; key_type, <a class="el" href="../../de/d99/class_graph_1_1_node.html">Node</a> &gt;::const_iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d9a/class_graph.html#acd8ab28e2f1d880ce081f236697376dd">const_iterator</a></td></tr>
 <tr class="separator:acd8ab28e2f1d880ce081f236697376dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a386270988d4af7f380e5b84fb47a45b6"><td class="memItemLeft" align="right" valign="top"><a id="a386270988d4af7f380e5b84fb47a45b6" name="a386270988d4af7f380e5b84fb47a45b6"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Graph</b> ()=default</td></tr>
-<tr class="memdesc:a386270988d4af7f380e5b84fb47a45b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Дефолтный конструктор <br /></td></tr>
+<tr class="memitem:a386270988d4af7f380e5b84fb47a45b6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d9a/class_graph.html#a386270988d4af7f380e5b84fb47a45b6">Graph</a> ()=default</td></tr>
+<tr class="memdesc:a386270988d4af7f380e5b84fb47a45b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Дефолтный конструктор  <br /></td></tr>
 <tr class="separator:a386270988d4af7f380e5b84fb47a45b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1b4bd601b1d87720df9de1839597ebf8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d9a/class_graph.html#a1b4bd601b1d87720df9de1839597ebf8">Graph</a> (const <a class="el" href="../../da/d9a/class_graph.html">Graph</a>&lt; key_type, value_type, weight_type &gt; &amp;other)=default</td></tr>
 <tr class="memdesc:a1b4bd601b1d87720df9de1839597ebf8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор копирования  <br /></td></tr>
@@ -120,31 +146,36 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a0c4c2313662b2741002c485147f45213"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../da/d9a/class_graph.html">Graph</a>&lt; key_type, value_type, weight_type &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d9a/class_graph.html#a0c4c2313662b2741002c485147f45213">operator=</a> (<a class="el" href="../../da/d9a/class_graph.html">Graph</a>&lt; key_type, value_type, weight_type &gt; &amp;&amp;rhs) noexcept=default</td></tr>
 <tr class="memdesc:a0c4c2313662b2741002c485147f45213"><td class="mdescLeft">&#160;</td><td class="mdescRight">Оператор перемещающего присваивания  <br /></td></tr>
 <tr class="separator:a0c4c2313662b2741002c485147f45213"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3ec38809c46d34e948de77e45710bacc"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d9a/class_graph.html#a3ec38809c46d34e948de77e45710bacc">empty</a> ()</td></tr>
-<tr class="memdesc:a3ec38809c46d34e948de77e45710bacc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Проверка на пустоту графа  <br /></td></tr>
-<tr class="separator:a3ec38809c46d34e948de77e45710bacc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8fab7b514febaaef5eeb8beaf22f4d3e"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d9a/class_graph.html#a8fab7b514febaaef5eeb8beaf22f4d3e">size</a> ()</td></tr>
-<tr class="memdesc:a8fab7b514febaaef5eeb8beaf22f4d3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Количество узлов в графе  <br /></td></tr>
-<tr class="separator:a8fab7b514febaaef5eeb8beaf22f4d3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a73a6530116afe16c08f499d572c8b619"><td class="memItemLeft" align="right" valign="top"><a id="a73a6530116afe16c08f499d572c8b619" name="a73a6530116afe16c08f499d572c8b619"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>clear</b> ()</td></tr>
-<tr class="memdesc:a73a6530116afe16c08f499d572c8b619"><td class="mdescLeft">&#160;</td><td class="mdescRight">Удаление графа <br /></td></tr>
+<tr class="memitem:a248f732451fd734eb4c36db42880f190"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d9a/class_graph.html#a248f732451fd734eb4c36db42880f190">empty</a> () const noexcept</td></tr>
+<tr class="memdesc:a248f732451fd734eb4c36db42880f190"><td class="mdescLeft">&#160;</td><td class="mdescRight">Проверка на пустоту графа  <br /></td></tr>
+<tr class="separator:a248f732451fd734eb4c36db42880f190"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0839bb03a69f090d411ae6246d143b96"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d9a/class_graph.html#a0839bb03a69f090d411ae6246d143b96">size</a> () const noexcept</td></tr>
+<tr class="memdesc:a0839bb03a69f090d411ae6246d143b96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Количество узлов в графе  <br /></td></tr>
+<tr class="separator:a0839bb03a69f090d411ae6246d143b96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73a6530116afe16c08f499d572c8b619"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d9a/class_graph.html#a73a6530116afe16c08f499d572c8b619">clear</a> ()</td></tr>
+<tr class="memdesc:a73a6530116afe16c08f499d572c8b619"><td class="mdescLeft">&#160;</td><td class="mdescRight">Удаление графа  <br /></td></tr>
 <tr class="separator:a73a6530116afe16c08f499d572c8b619"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a34d5a820ffcd5595eb1cc31d43173379"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d9a/class_graph.html#a34d5a820ffcd5595eb1cc31d43173379">swap</a> (<a class="el" href="../../da/d9a/class_graph.html">Graph</a>&lt; key_type, value_type, weight_type &gt; &amp;g)</td></tr>
-<tr class="memdesc:a34d5a820ffcd5595eb1cc31d43173379"><td class="mdescLeft">&#160;</td><td class="mdescRight">? swap ?  <br /></td></tr>
-<tr class="separator:a34d5a820ffcd5595eb1cc31d43173379"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a87e32250a990ef034113debaf9f7b5f7"><td class="memItemLeft" align="right" valign="top">iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d9a/class_graph.html#a87e32250a990ef034113debaf9f7b5f7">begin</a> ()</td></tr>
-<tr class="memdesc:a87e32250a990ef034113debaf9f7b5f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Итератор begin.  <br /></td></tr>
-<tr class="separator:a87e32250a990ef034113debaf9f7b5f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac9f1c9278972246ab3641a7a5a6e2e7e"><td class="memItemLeft" align="right" valign="top">iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d9a/class_graph.html#ac9f1c9278972246ab3641a7a5a6e2e7e">end</a> ()</td></tr>
-<tr class="memdesc:ac9f1c9278972246ab3641a7a5a6e2e7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Итератор end.  <br /></td></tr>
-<tr class="separator:ac9f1c9278972246ab3641a7a5a6e2e7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acc9f67bbea4a61764929e1db982cdfc9"><td class="memItemLeft" align="right" valign="top">const_iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d9a/class_graph.html#acc9f67bbea4a61764929e1db982cdfc9">cbegin</a> ()</td></tr>
-<tr class="memdesc:acc9f67bbea4a61764929e1db982cdfc9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Константный итератор cbegin.  <br /></td></tr>
-<tr class="separator:acc9f67bbea4a61764929e1db982cdfc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3173dfdcee7b4f6e447af5a2a02c54b8"><td class="memItemLeft" align="right" valign="top">const_iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d9a/class_graph.html#a3173dfdcee7b4f6e447af5a2a02c54b8">cend</a> ()</td></tr>
-<tr class="memdesc:a3173dfdcee7b4f6e447af5a2a02c54b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Константный итератор cend.  <br /></td></tr>
-<tr class="separator:a3173dfdcee7b4f6e447af5a2a02c54b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a7e3026ab6d52f1063d3ed3570586e8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d9a/class_graph.html#a9a7e3026ab6d52f1063d3ed3570586e8">swap</a> (<a class="el" href="../../da/d9a/class_graph.html">Graph</a>&lt; key_type, value_type, weight_type &gt; &amp;other)</td></tr>
+<tr class="memdesc:a9a7e3026ab6d52f1063d3ed3570586e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обмен местами (как метод класса)  <br /></td></tr>
+<tr class="separator:a9a7e3026ab6d52f1063d3ed3570586e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0afbfb79538abacd0a098ce63e6abf94"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../da/d9a/class_graph.html#ab0f6da23b75b55807ba43dd8d3b24385">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d9a/class_graph.html#a0afbfb79538abacd0a098ce63e6abf94">begin</a> () noexcept</td></tr>
+<tr class="memdesc:a0afbfb79538abacd0a098ce63e6abf94"><td class="mdescLeft">&#160;</td><td class="mdescRight">Итератор begin.  <br /></td></tr>
+<tr class="separator:a0afbfb79538abacd0a098ce63e6abf94"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa406ecc3ac62b38e1f1eda24e5ec205f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../da/d9a/class_graph.html#ab0f6da23b75b55807ba43dd8d3b24385">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d9a/class_graph.html#aa406ecc3ac62b38e1f1eda24e5ec205f">end</a> () noexcept</td></tr>
+<tr class="memdesc:aa406ecc3ac62b38e1f1eda24e5ec205f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Итератор end.  <br /></td></tr>
+<tr class="separator:aa406ecc3ac62b38e1f1eda24e5ec205f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5be9b5a335218f477565679e6fc9d62"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../da/d9a/class_graph.html#acd8ab28e2f1d880ce081f236697376dd">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d9a/class_graph.html#ac5be9b5a335218f477565679e6fc9d62">begin</a> () const noexcept</td></tr>
+<tr class="memdesc:ac5be9b5a335218f477565679e6fc9d62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Итератор begin (const версия)  <br /></td></tr>
+<tr class="separator:ac5be9b5a335218f477565679e6fc9d62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56a67e8cb9859014dece170e1e27c1b7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../da/d9a/class_graph.html#acd8ab28e2f1d880ce081f236697376dd">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d9a/class_graph.html#a56a67e8cb9859014dece170e1e27c1b7">end</a> () const noexcept</td></tr>
+<tr class="memdesc:a56a67e8cb9859014dece170e1e27c1b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Итератор end (const версия)  <br /></td></tr>
+<tr class="separator:a56a67e8cb9859014dece170e1e27c1b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82c3dfd241786cba906c7bb82c9df0f9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../da/d9a/class_graph.html#acd8ab28e2f1d880ce081f236697376dd">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d9a/class_graph.html#a82c3dfd241786cba906c7bb82c9df0f9">cbegin</a> () const</td></tr>
+<tr class="memdesc:a82c3dfd241786cba906c7bb82c9df0f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Константный итератор cbegin.  <br /></td></tr>
+<tr class="separator:a82c3dfd241786cba906c7bb82c9df0f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff3ff92614383526256f434823380427"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../da/d9a/class_graph.html#acd8ab28e2f1d880ce081f236697376dd">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d9a/class_graph.html#aff3ff92614383526256f434823380427">cend</a> () const</td></tr>
+<tr class="memdesc:aff3ff92614383526256f434823380427"><td class="mdescLeft">&#160;</td><td class="mdescRight">Константный итератор cend.  <br /></td></tr>
+<tr class="separator:aff3ff92614383526256f434823380427"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac080e07a5cee3fea8f11ea50976837df"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d9a/class_graph.html#ac080e07a5cee3fea8f11ea50976837df">degree_in</a> (key_type key)</td></tr>
 <tr class="memdesc:ac080e07a5cee3fea8f11ea50976837df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Степень (входящие рёбра)  <br /></td></tr>
 <tr class="separator:ac080e07a5cee3fea8f11ea50976837df"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -154,12 +185,49 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>clear</b> ()</td></tr
 <tr class="memitem:a19cb2d573605c67599bfc10bdaaaa462"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d9a/class_graph.html#a19cb2d573605c67599bfc10bdaaaa462">loop</a> (key_type key)</td></tr>
 <tr class="memdesc:a19cb2d573605c67599bfc10bdaaaa462"><td class="mdescLeft">&#160;</td><td class="mdescRight">Проверка на наличие петли  <br /></td></tr>
 <tr class="separator:a19cb2d573605c67599bfc10bdaaaa462"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af37f4db38e8b797d6d882a4ebd85297f"><td class="memItemLeft" align="right" valign="top">Node &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d9a/class_graph.html#af37f4db38e8b797d6d882a4ebd85297f">operator[]</a> (key_type key)</td></tr>
-<tr class="memdesc:af37f4db38e8b797d6d882a4ebd85297f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Доступ к элементу по ключу  <br /></td></tr>
+<tr class="memitem:af37f4db38e8b797d6d882a4ebd85297f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d99/class_graph_1_1_node.html">Node</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d9a/class_graph.html#af37f4db38e8b797d6d882a4ebd85297f">operator[]</a> (key_type key)</td></tr>
+<tr class="memdesc:af37f4db38e8b797d6d882a4ebd85297f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Доступ к узлу по ключу  <br /></td></tr>
 <tr class="separator:af37f4db38e8b797d6d882a4ebd85297f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab13a47216f8a458fe194de1ef43fba0b"><td class="memItemLeft" align="right" valign="top">Node &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d9a/class_graph.html#ab13a47216f8a458fe194de1ef43fba0b">at</a> (key_type key)</td></tr>
+<tr class="memitem:a0d1db70bbdba5a352affe97beee80bc7"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../de/d99/class_graph_1_1_node.html">Node</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d9a/class_graph.html#a0d1db70bbdba5a352affe97beee80bc7">operator[]</a> (key_type key) const</td></tr>
+<tr class="memdesc:a0d1db70bbdba5a352affe97beee80bc7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Доступ к узлу по ключу (const версия)  <br /></td></tr>
+<tr class="separator:a0d1db70bbdba5a352affe97beee80bc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab13a47216f8a458fe194de1ef43fba0b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d99/class_graph_1_1_node.html">Node</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d9a/class_graph.html#ab13a47216f8a458fe194de1ef43fba0b">at</a> (key_type key)</td></tr>
 <tr class="memdesc:ab13a47216f8a458fe194de1ef43fba0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Доступ к элементу по ключу  <br /></td></tr>
 <tr class="separator:ab13a47216f8a458fe194de1ef43fba0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a774845f427dd6f3bb1504d67e5be6e30"><td class="memItemLeft" align="right" valign="top">std::pair&lt; <a class="el" href="../../da/d9a/class_graph.html#ab0f6da23b75b55807ba43dd8d3b24385">iterator</a>, bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d9a/class_graph.html#a774845f427dd6f3bb1504d67e5be6e30">insert_node</a> (key_type key, value_type val)</td></tr>
+<tr class="memdesc:a774845f427dd6f3bb1504d67e5be6e30"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вставка узла (без переприсваивания)  <br /></td></tr>
+<tr class="separator:a774845f427dd6f3bb1504d67e5be6e30"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68dbdbc470b61d0fb03d01ed40cf3d8f"><td class="memItemLeft" align="right" valign="top">std::pair&lt; <a class="el" href="../../da/d9a/class_graph.html#ab0f6da23b75b55807ba43dd8d3b24385">iterator</a>, bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d9a/class_graph.html#a68dbdbc470b61d0fb03d01ed40cf3d8f">insert_or_assign_node</a> (key_type key, value_type val)</td></tr>
+<tr class="separator:a68dbdbc470b61d0fb03d01ed40cf3d8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b357f0beb9d3d0ddf8c312bc76b13c1"><td class="memItemLeft" align="right" valign="top">std::pair&lt; typename std::map&lt; key_type, weight_type &gt;<a class="el" href="../../da/d9a/class_graph.html#ab0f6da23b75b55807ba43dd8d3b24385">::iterator</a>, bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d9a/class_graph.html#a7b357f0beb9d3d0ddf8c312bc76b13c1">insert_edge</a> (std::pair&lt; key_type, key_type &gt; keys, weight_type weight)</td></tr>
+<tr class="memdesc:a7b357f0beb9d3d0ddf8c312bc76b13c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вставка ребра (без переприсваивания)  <br /></td></tr>
+<tr class="separator:a7b357f0beb9d3d0ddf8c312bc76b13c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad264b88abe782f6840b3e7cbcdb962a3"><td class="memItemLeft" align="right" valign="top">std::pair&lt; typename std::map&lt; key_type, weight_type &gt;<a class="el" href="../../da/d9a/class_graph.html#ab0f6da23b75b55807ba43dd8d3b24385">::iterator</a>, bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d9a/class_graph.html#ad264b88abe782f6840b3e7cbcdb962a3">insert_or_assign_edge</a> (std::pair&lt; key_type, key_type &gt; keys, weight_type weight)</td></tr>
+<tr class="memdesc:ad264b88abe782f6840b3e7cbcdb962a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вставка ребра (с переприсваиванием)  <br /></td></tr>
+<tr class="separator:ad264b88abe782f6840b3e7cbcdb962a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b3fbc6de528ef92b9260009a69aec1b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d9a/class_graph.html#a4b3fbc6de528ef92b9260009a69aec1b">clear_edges</a> ()</td></tr>
+<tr class="memdesc:a4b3fbc6de528ef92b9260009a69aec1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Очистка рёбер графа  <br /></td></tr>
+<tr class="separator:a4b3fbc6de528ef92b9260009a69aec1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ffdb86c5fa435f6dfdc0403c4ebce62"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d9a/class_graph.html#a3ffdb86c5fa435f6dfdc0403c4ebce62">erase_edges_go_from</a> (key_type key)</td></tr>
+<tr class="memdesc:a3ffdb86c5fa435f6dfdc0403c4ebce62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Очистка рёбер, выходящих из узла  <br /></td></tr>
+<tr class="separator:a3ffdb86c5fa435f6dfdc0403c4ebce62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8fed563e33cdc9eb51224e7c2af56265"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d9a/class_graph.html#a8fed563e33cdc9eb51224e7c2af56265">erase_edges_go_to</a> (key_type key)</td></tr>
+<tr class="memdesc:a8fed563e33cdc9eb51224e7c2af56265"><td class="mdescLeft">&#160;</td><td class="mdescRight">Очистка рёбер, входящих в узел  <br /></td></tr>
+<tr class="separator:a8fed563e33cdc9eb51224e7c2af56265"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a628c03d78ad5824662fff8b587d9061d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d9a/class_graph.html#a628c03d78ad5824662fff8b587d9061d">erase_node</a> (key_type key)</td></tr>
+<tr class="memdesc:a628c03d78ad5824662fff8b587d9061d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Удаление узла  <br /></td></tr>
+<tr class="separator:a628c03d78ad5824662fff8b587d9061d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a360b257cbb7061f08bda5eacc2c493a4"><td class="memItemLeft" align="right" valign="top">std::map&lt; key_type, <a class="el" href="../../de/d99/class_graph_1_1_node.html">Node</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d9a/class_graph.html#a360b257cbb7061f08bda5eacc2c493a4">graph</a></td></tr>
+<tr class="separator:a360b257cbb7061f08bda5eacc2c493a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
+Friends</h2></td></tr>
+<tr class="memitem:a3305372f4c98b2e9c275d874c54ffe2f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d9a/class_graph.html#a3305372f4c98b2e9c275d874c54ffe2f">swap</a> (<a class="el" href="../../da/d9a/class_graph.html">Graph</a>&lt; key_type, value_type, weight_type &gt; &amp;lhs, <a class="el" href="../../da/d9a/class_graph.html">Graph</a>&lt; key_type, value_type, weight_type &gt; &amp;rhs)</td></tr>
+<tr class="memdesc:a3305372f4c98b2e9c275d874c54ffe2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обмен местами (как дружественная функция)  <br /></td></tr>
+<tr class="separator:a3305372f4c98b2e9c275d874c54ffe2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename key_type, typename value_type, typename weight_type&gt;<br />
@@ -172,9 +240,71 @@ class Graph&lt; key_type, value_type, weight_type &gt;</div><p>Шаблонны�
   </table>
   </dd>
 </dl>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<a id="acd8ab28e2f1d880ce081f236697376dd" name="acd8ab28e2f1d880ce081f236697376dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd8ab28e2f1d880ce081f236697376dd">&#9670;&#160;</a></span>const_iterator</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename key_type , typename value_type , typename weight_type &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef std::map&lt;key_type,<a class="el" href="../../de/d99/class_graph_1_1_node.html">Node</a>&gt;::const_iterator <a class="el" href="../../da/d9a/class_graph.html">Graph</a>&lt; key_type, value_type, weight_type &gt;::const_iterator</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab0f6da23b75b55807ba43dd8d3b24385" name="ab0f6da23b75b55807ba43dd8d3b24385"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0f6da23b75b55807ba43dd8d3b24385">&#9670;&#160;</a></span>iterator</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename key_type , typename value_type , typename weight_type &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef std::map&lt;key_type,<a class="el" href="../../de/d99/class_graph_1_1_node.html">Node</a>&gt;::iterator <a class="el" href="../../da/d9a/class_graph.html">Graph</a>&lt; key_type, value_type, weight_type &gt;::iterator</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a386270988d4af7f380e5b84fb47a45b6" name="a386270988d4af7f380e5b84fb47a45b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a386270988d4af7f380e5b84fb47a45b6">&#9670;&#160;</a></span>Graph() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename key_type , typename value_type , typename weight_type &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../da/d9a/class_graph.html">Graph</a>&lt; key_type, value_type, weight_type &gt;<a class="el" href="../../da/d9a/class_graph.html">::Graph</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Дефолтный конструктор </p>
+
+</div>
+</div>
 <a id="a1b4bd601b1d87720df9de1839597ebf8" name="a1b4bd601b1d87720df9de1839597ebf8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1b4bd601b1d87720df9de1839597ebf8">&#9670;&#160;</a></span>Graph() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b4bd601b1d87720df9de1839597ebf8">&#9670;&#160;</a></span>Graph() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -210,7 +340,7 @@ template&lt;typename key_type , typename value_type , typename weight_type &gt; 
 </div>
 </div>
 <a id="afb9f86b07d7b440102ff9f992af8e732" name="afb9f86b07d7b440102ff9f992af8e732"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afb9f86b07d7b440102ff9f992af8e732">&#9670;&#160;</a></span>Graph() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#afb9f86b07d7b440102ff9f992af8e732">&#9670;&#160;</a></span>Graph() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -258,7 +388,7 @@ template&lt;typename key_type , typename value_type , typename weight_type &gt; 
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">Node &amp; <a class="el" href="../../da/d9a/class_graph.html">Graph</a>&lt; key_type, value_type, weight_type &gt;::at </td>
+          <td class="memname"><a class="el" href="../../de/d99/class_graph_1_1_node.html">Node</a> &amp; <a class="el" href="../../da/d9a/class_graph.html">Graph</a>&lt; key_type, value_type, weight_type &gt;::at </td>
           <td>(</td>
           <td class="paramtype">key_type&#160;</td>
           <td class="paramname"><em>key</em></td><td>)</td>
@@ -279,12 +409,21 @@ template&lt;typename key_type , typename value_type , typename weight_type &gt; 
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="../../de/d99/class_graph_1_1_node.html" title="Внутренний класс узла">Node</a>&amp; </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../da/d9a/class_graph_ab13a47216f8a458fe194de1ef43fba0b_icgraph.png" border="0" usemap="#ada/d9a/class_graph_ab13a47216f8a458fe194de1ef43fba0b_icgraph" alt=""/></div>
+<map name="ada/d9a/class_graph_ab13a47216f8a458fe194de1ef43fba0b_icgraph" id="ada/d9a/class_graph_ab13a47216f8a458fe194de1ef43fba0b_icgraph">
+<area shape="rect" title="Доступ к элементу по ключу" alt="" coords="104,5,180,31"/>
+<area shape="rect" href="../../df/d0a/main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,56,31"/>
+</map>
+</div>
 
 </div>
 </div>
-<a id="a87e32250a990ef034113debaf9f7b5f7" name="a87e32250a990ef034113debaf9f7b5f7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a87e32250a990ef034113debaf9f7b5f7">&#9670;&#160;</a></span>begin()</h2>
+<a id="ac5be9b5a335218f477565679e6fc9d62" name="ac5be9b5a335218f477565679e6fc9d62"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac5be9b5a335218f477565679e6fc9d62">&#9670;&#160;</a></span>begin() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -295,7 +434,37 @@ template&lt;typename key_type , typename value_type , typename weight_type &gt; 
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">iterator <a class="el" href="../../da/d9a/class_graph.html">Graph</a>&lt; key_type, value_type, weight_type &gt;::begin </td>
+          <td class="memname"><a class="el" href="../../da/d9a/class_graph.html#acd8ab28e2f1d880ce081f236697376dd">const_iterator</a> <a class="el" href="../../da/d9a/class_graph.html">Graph</a>&lt; key_type, value_type, weight_type &gt;::begin </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Итератор begin (const версия) </p>
+<dl class="section return"><dt>Returns</dt><dd>iterator </dd></dl>
+
+</div>
+</div>
+<a id="a0afbfb79538abacd0a098ce63e6abf94" name="a0afbfb79538abacd0a098ce63e6abf94"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0afbfb79538abacd0a098ce63e6abf94">&#9670;&#160;</a></span>begin() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename key_type , typename value_type , typename weight_type &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../da/d9a/class_graph.html#ab0f6da23b75b55807ba43dd8d3b24385">iterator</a> <a class="el" href="../../da/d9a/class_graph.html">Graph</a>&lt; key_type, value_type, weight_type &gt;::begin </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -303,18 +472,18 @@ template&lt;typename key_type , typename value_type , typename weight_type &gt; 
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 <p>Итератор begin. </p>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>iterator </dd></dl>
 
 </div>
 </div>
-<a id="acc9f67bbea4a61764929e1db982cdfc9" name="acc9f67bbea4a61764929e1db982cdfc9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acc9f67bbea4a61764929e1db982cdfc9">&#9670;&#160;</a></span>cbegin()</h2>
+<a id="a82c3dfd241786cba906c7bb82c9df0f9" name="a82c3dfd241786cba906c7bb82c9df0f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82c3dfd241786cba906c7bb82c9df0f9">&#9670;&#160;</a></span>cbegin()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -325,10 +494,10 @@ template&lt;typename key_type , typename value_type , typename weight_type &gt; 
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const_iterator <a class="el" href="../../da/d9a/class_graph.html">Graph</a>&lt; key_type, value_type, weight_type &gt;::cbegin </td>
+          <td class="memname"><a class="el" href="../../da/d9a/class_graph.html#acd8ab28e2f1d880ce081f236697376dd">const_iterator</a> <a class="el" href="../../da/d9a/class_graph.html">Graph</a>&lt; key_type, value_type, weight_type &gt;::cbegin </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
   </td>
@@ -339,12 +508,12 @@ template&lt;typename key_type , typename value_type , typename weight_type &gt; 
 </div><div class="memdoc">
 
 <p>Константный итератор cbegin. </p>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>const_iterator </dd></dl>
 
 </div>
 </div>
-<a id="a3173dfdcee7b4f6e447af5a2a02c54b8" name="a3173dfdcee7b4f6e447af5a2a02c54b8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3173dfdcee7b4f6e447af5a2a02c54b8">&#9670;&#160;</a></span>cend()</h2>
+<a id="aff3ff92614383526256f434823380427" name="aff3ff92614383526256f434823380427"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aff3ff92614383526256f434823380427">&#9670;&#160;</a></span>cend()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -355,7 +524,37 @@ template&lt;typename key_type , typename value_type , typename weight_type &gt; 
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const_iterator <a class="el" href="../../da/d9a/class_graph.html">Graph</a>&lt; key_type, value_type, weight_type &gt;::cend </td>
+          <td class="memname"><a class="el" href="../../da/d9a/class_graph.html#acd8ab28e2f1d880ce081f236697376dd">const_iterator</a> <a class="el" href="../../da/d9a/class_graph.html">Graph</a>&lt; key_type, value_type, weight_type &gt;::cend </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Константный итератор cend. </p>
+<dl class="section return"><dt>Returns</dt><dd>const_iterator </dd></dl>
+
+</div>
+</div>
+<a id="a73a6530116afe16c08f499d572c8b619" name="a73a6530116afe16c08f499d572c8b619"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73a6530116afe16c08f499d572c8b619">&#9670;&#160;</a></span>clear()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename key_type , typename value_type , typename weight_type &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="../../da/d9a/class_graph.html">Graph</a>&lt; key_type, value_type, weight_type &gt;::clear </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -368,8 +567,54 @@ template&lt;typename key_type , typename value_type , typename weight_type &gt; 
 </table>
 </div><div class="memdoc">
 
-<p>Константный итератор cend. </p>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<p>Удаление графа </p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../da/d9a/class_graph_a73a6530116afe16c08f499d572c8b619_icgraph.png" border="0" usemap="#ada/d9a/class_graph_a73a6530116afe16c08f499d572c8b619_icgraph" alt=""/></div>
+<map name="ada/d9a/class_graph_a73a6530116afe16c08f499d572c8b619_icgraph" id="ada/d9a/class_graph_a73a6530116afe16c08f499d572c8b619_icgraph">
+<area shape="rect" title="Удаление графа" alt="" coords="104,5,197,31"/>
+<area shape="rect" href="../../df/d0a/main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,56,31"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a4b3fbc6de528ef92b9260009a69aec1b" name="a4b3fbc6de528ef92b9260009a69aec1b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b3fbc6de528ef92b9260009a69aec1b">&#9670;&#160;</a></span>clear_edges()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename key_type , typename value_type , typename weight_type &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="../../da/d9a/class_graph.html">Graph</a>&lt; key_type, value_type, weight_type &gt;::clear_edges </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Очистка рёбер графа </p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../da/d9a/class_graph_a4b3fbc6de528ef92b9260009a69aec1b_icgraph.png" border="0" usemap="#ada/d9a/class_graph_a4b3fbc6de528ef92b9260009a69aec1b_icgraph" alt=""/></div>
+<map name="ada/d9a/class_graph_a4b3fbc6de528ef92b9260009a69aec1b_icgraph" id="ada/d9a/class_graph_a4b3fbc6de528ef92b9260009a69aec1b_icgraph">
+<area shape="rect" title="Очистка рёбер графа" alt="" coords="104,5,239,31"/>
+<area shape="rect" href="../../df/d0a/main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,56,31"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -406,7 +651,16 @@ template&lt;typename key_type , typename value_type , typename weight_type &gt; 
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>size_t </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../da/d9a/class_graph_ac080e07a5cee3fea8f11ea50976837df_icgraph.png" border="0" usemap="#ada/d9a/class_graph_ac080e07a5cee3fea8f11ea50976837df_icgraph" alt=""/></div>
+<map name="ada/d9a/class_graph_ac080e07a5cee3fea8f11ea50976837df_icgraph" id="ada/d9a/class_graph_ac080e07a5cee3fea8f11ea50976837df_icgraph">
+<area shape="rect" title="Степень (входящие рёбра)" alt="" coords="104,5,225,31"/>
+<area shape="rect" href="../../df/d0a/main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,56,31"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -443,12 +697,21 @@ template&lt;typename key_type , typename value_type , typename weight_type &gt; 
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>size_t </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../da/d9a/class_graph_a9cf8fab8ae9608c500b5452d1b563e21_icgraph.png" border="0" usemap="#ada/d9a/class_graph_a9cf8fab8ae9608c500b5452d1b563e21_icgraph" alt=""/></div>
+<map name="ada/d9a/class_graph_a9cf8fab8ae9608c500b5452d1b563e21_icgraph" id="ada/d9a/class_graph_a9cf8fab8ae9608c500b5452d1b563e21_icgraph">
+<area shape="rect" title="Степень (выходящие рёбра)" alt="" coords="104,5,233,31"/>
+<area shape="rect" href="../../df/d0a/main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,56,31"/>
+</map>
+</div>
 
 </div>
 </div>
-<a id="a3ec38809c46d34e948de77e45710bacc" name="a3ec38809c46d34e948de77e45710bacc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3ec38809c46d34e948de77e45710bacc">&#9670;&#160;</a></span>empty()</h2>
+<a id="a248f732451fd734eb4c36db42880f190" name="a248f732451fd734eb4c36db42880f190"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a248f732451fd734eb4c36db42880f190">&#9670;&#160;</a></span>empty()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -459,26 +722,36 @@ template&lt;typename key_type , typename value_type , typename weight_type &gt; 
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="../../da/d9a/class_graph.html">Graph</a>&lt; key_type, value_type, weight_type &gt;::empty </td>
+          <td class="memname">constexpr bool <a class="el" href="../../da/d9a/class_graph.html">Graph</a>&lt; key_type, value_type, weight_type &gt;::empty </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 <p>Проверка на пустоту графа </p>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../da/d9a/class_graph_a248f732451fd734eb4c36db42880f190_icgraph.png" border="0" usemap="#ada/d9a/class_graph_a248f732451fd734eb4c36db42880f190_icgraph" alt=""/></div>
+<map name="ada/d9a/class_graph_a248f732451fd734eb4c36db42880f190_icgraph" id="ada/d9a/class_graph_a248f732451fd734eb4c36db42880f190_icgraph">
+<area shape="rect" title="Проверка на пустоту графа" alt="" coords="199,5,300,31"/>
+<area shape="rect" href="../../df/d0a/main_8cpp.html#a509e6a465ad03c3e646d0ccd43431639" title="Вывод графа в консоль" alt="" coords="104,5,151,31"/>
+<area shape="rect" href="../../df/d0a/main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,56,31"/>
+</map>
+</div>
 
 </div>
 </div>
-<a id="ac9f1c9278972246ab3641a7a5a6e2e7e" name="ac9f1c9278972246ab3641a7a5a6e2e7e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac9f1c9278972246ab3641a7a5a6e2e7e">&#9670;&#160;</a></span>end()</h2>
+<a id="a56a67e8cb9859014dece170e1e27c1b7" name="a56a67e8cb9859014dece170e1e27c1b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a56a67e8cb9859014dece170e1e27c1b7">&#9670;&#160;</a></span>end() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -489,9 +762,70 @@ template&lt;typename key_type , typename value_type , typename weight_type &gt; 
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">iterator <a class="el" href="../../da/d9a/class_graph.html">Graph</a>&lt; key_type, value_type, weight_type &gt;::end </td>
+          <td class="memname"><a class="el" href="../../da/d9a/class_graph.html#acd8ab28e2f1d880ce081f236697376dd">const_iterator</a> <a class="el" href="../../da/d9a/class_graph.html">Graph</a>&lt; key_type, value_type, weight_type &gt;::end </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Итератор end (const версия) </p>
+<dl class="section return"><dt>Returns</dt><dd>iterator </dd></dl>
+
+</div>
+</div>
+<a id="aa406ecc3ac62b38e1f1eda24e5ec205f" name="aa406ecc3ac62b38e1f1eda24e5ec205f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa406ecc3ac62b38e1f1eda24e5ec205f">&#9670;&#160;</a></span>end() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename key_type , typename value_type , typename weight_type &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../da/d9a/class_graph.html#ab0f6da23b75b55807ba43dd8d3b24385">iterator</a> <a class="el" href="../../da/d9a/class_graph.html">Graph</a>&lt; key_type, value_type, weight_type &gt;::end </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Итератор end. </p>
+<dl class="section return"><dt>Returns</dt><dd>iterator </dd></dl>
+
+</div>
+</div>
+<a id="a3ffdb86c5fa435f6dfdc0403c4ebce62" name="a3ffdb86c5fa435f6dfdc0403c4ebce62"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ffdb86c5fa435f6dfdc0403c4ebce62">&#9670;&#160;</a></span>erase_edges_go_from()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename key_type , typename value_type , typename weight_type &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="../../da/d9a/class_graph.html">Graph</a>&lt; key_type, value_type, weight_type &gt;::erase_edges_go_from </td>
+          <td>(</td>
+          <td class="paramtype">key_type&#160;</td>
+          <td class="paramname"><em>key</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -502,8 +836,359 @@ template&lt;typename key_type , typename value_type , typename weight_type &gt; 
 </table>
 </div><div class="memdoc">
 
-<p>Итератор end. </p>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<p>Очистка рёбер, выходящих из узла </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>bool </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../da/d9a/class_graph_a3ffdb86c5fa435f6dfdc0403c4ebce62_icgraph.png" border="0" usemap="#ada/d9a/class_graph_a3ffdb86c5fa435f6dfdc0403c4ebce62_icgraph" alt=""/></div>
+<map name="ada/d9a/class_graph_a3ffdb86c5fa435f6dfdc0403c4ebce62_icgraph" id="ada/d9a/class_graph_a3ffdb86c5fa435f6dfdc0403c4ebce62_icgraph">
+<area shape="rect" title="Очистка рёбер, выходящих из узла" alt="" coords="104,5,296,31"/>
+<area shape="rect" href="../../df/d0a/main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,56,31"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a8fed563e33cdc9eb51224e7c2af56265" name="a8fed563e33cdc9eb51224e7c2af56265"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8fed563e33cdc9eb51224e7c2af56265">&#9670;&#160;</a></span>erase_edges_go_to()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename key_type , typename value_type , typename weight_type &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="../../da/d9a/class_graph.html">Graph</a>&lt; key_type, value_type, weight_type &gt;::erase_edges_go_to </td>
+          <td>(</td>
+          <td class="paramtype">key_type&#160;</td>
+          <td class="paramname"><em>key</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Очистка рёбер, входящих в узел </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>bool </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../da/d9a/class_graph_a8fed563e33cdc9eb51224e7c2af56265_icgraph.png" border="0" usemap="#ada/d9a/class_graph_a8fed563e33cdc9eb51224e7c2af56265_icgraph" alt=""/></div>
+<map name="ada/d9a/class_graph_a8fed563e33cdc9eb51224e7c2af56265_icgraph" id="ada/d9a/class_graph_a8fed563e33cdc9eb51224e7c2af56265_icgraph">
+<area shape="rect" title="Очистка рёбер, входящих в узел" alt="" coords="104,5,283,31"/>
+<area shape="rect" href="../../df/d0a/main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,56,31"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a628c03d78ad5824662fff8b587d9061d" name="a628c03d78ad5824662fff8b587d9061d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a628c03d78ad5824662fff8b587d9061d">&#9670;&#160;</a></span>erase_node()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename key_type , typename value_type , typename weight_type &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="../../da/d9a/class_graph.html">Graph</a>&lt; key_type, value_type, weight_type &gt;::erase_node </td>
+          <td>(</td>
+          <td class="paramtype">key_type&#160;</td>
+          <td class="paramname"><em>key</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Удаление узла </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>bool </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../da/d9a/class_graph_a628c03d78ad5824662fff8b587d9061d_icgraph.png" border="0" usemap="#ada/d9a/class_graph_a628c03d78ad5824662fff8b587d9061d_icgraph" alt=""/></div>
+<map name="ada/d9a/class_graph_a628c03d78ad5824662fff8b587d9061d_icgraph" id="ada/d9a/class_graph_a628c03d78ad5824662fff8b587d9061d_icgraph">
+<area shape="rect" title="Удаление узла" alt="" coords="104,5,236,31"/>
+<area shape="rect" href="../../df/d0a/main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,56,31"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a7b357f0beb9d3d0ddf8c312bc76b13c1" name="a7b357f0beb9d3d0ddf8c312bc76b13c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b357f0beb9d3d0ddf8c312bc76b13c1">&#9670;&#160;</a></span>insert_edge()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename key_type , typename value_type , typename weight_type &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::pair&lt; typename std::map&lt; key_type, weight_type &gt;<a class="el" href="../../da/d9a/class_graph.html#ab0f6da23b75b55807ba43dd8d3b24385">::iterator</a>, bool &gt; <a class="el" href="../../da/d9a/class_graph.html">Graph</a>&lt; key_type, value_type, weight_type &gt;::insert_edge </td>
+          <td>(</td>
+          <td class="paramtype">std::pair&lt; key_type, key_type &gt;&#160;</td>
+          <td class="paramname"><em>keys</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">weight_type&#160;</td>
+          <td class="paramname"><em>weight</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Вставка ребра (без переприсваивания) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">keys</td><td></td></tr>
+    <tr><td class="paramname">weight</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::pair&lt;iterator, bool&gt; </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../da/d9a/class_graph_a7b357f0beb9d3d0ddf8c312bc76b13c1_icgraph.png" border="0" usemap="#ada/d9a/class_graph_a7b357f0beb9d3d0ddf8c312bc76b13c1_icgraph" alt=""/></div>
+<map name="ada/d9a/class_graph_a7b357f0beb9d3d0ddf8c312bc76b13c1_icgraph" id="ada/d9a/class_graph_a7b357f0beb9d3d0ddf8c312bc76b13c1_icgraph">
+<area shape="rect" title="Вставка ребра (без переприсваивания)" alt="" coords="104,5,236,31"/>
+<area shape="rect" href="../../df/d0a/main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,56,31"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a774845f427dd6f3bb1504d67e5be6e30" name="a774845f427dd6f3bb1504d67e5be6e30"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a774845f427dd6f3bb1504d67e5be6e30">&#9670;&#160;</a></span>insert_node()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename key_type , typename value_type , typename weight_type &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::pair&lt; <a class="el" href="../../da/d9a/class_graph.html#ab0f6da23b75b55807ba43dd8d3b24385">iterator</a>, bool &gt; <a class="el" href="../../da/d9a/class_graph.html">Graph</a>&lt; key_type, value_type, weight_type &gt;::insert_node </td>
+          <td>(</td>
+          <td class="paramtype">key_type&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">value_type&#160;</td>
+          <td class="paramname"><em>val</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Вставка узла (без переприсваивания) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td></td></tr>
+    <tr><td class="paramname">val</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::pair&lt;iterator, bool&gt; </dd></dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../da/d9a/class_graph_a774845f427dd6f3bb1504d67e5be6e30_cgraph.png" border="0" usemap="#ada/d9a/class_graph_a774845f427dd6f3bb1504d67e5be6e30_cgraph" alt=""/></div>
+<map name="ada/d9a/class_graph_a774845f427dd6f3bb1504d67e5be6e30_cgraph" id="ada/d9a/class_graph_a774845f427dd6f3bb1504d67e5be6e30_cgraph">
+<area shape="rect" title="Вставка узла (без переприсваивания)" alt="" coords="5,5,137,31"/>
+<area shape="rect" href="../../de/d99/class_graph_1_1_node.html#a19ecf5b85d0ef8b780a95216bb718f48" title="Значение в узле" alt="" coords="185,5,317,31"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../da/d9a/class_graph_a774845f427dd6f3bb1504d67e5be6e30_icgraph.png" border="0" usemap="#ada/d9a/class_graph_a774845f427dd6f3bb1504d67e5be6e30_icgraph" alt=""/></div>
+<map name="ada/d9a/class_graph_a774845f427dd6f3bb1504d67e5be6e30_icgraph" id="ada/d9a/class_graph_a774845f427dd6f3bb1504d67e5be6e30_icgraph">
+<area shape="rect" title="Вставка узла (без переприсваивания)" alt="" coords="104,5,236,31"/>
+<area shape="rect" href="../../df/d0a/main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,56,31"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ad264b88abe782f6840b3e7cbcdb962a3" name="ad264b88abe782f6840b3e7cbcdb962a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad264b88abe782f6840b3e7cbcdb962a3">&#9670;&#160;</a></span>insert_or_assign_edge()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename key_type , typename value_type , typename weight_type &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::pair&lt; typename std::map&lt; key_type, weight_type &gt;<a class="el" href="../../da/d9a/class_graph.html#ab0f6da23b75b55807ba43dd8d3b24385">::iterator</a>, bool &gt; <a class="el" href="../../da/d9a/class_graph.html">Graph</a>&lt; key_type, value_type, weight_type &gt;::insert_or_assign_edge </td>
+          <td>(</td>
+          <td class="paramtype">std::pair&lt; key_type, key_type &gt;&#160;</td>
+          <td class="paramname"><em>keys</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">weight_type&#160;</td>
+          <td class="paramname"><em>weight</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Вставка ребра (с переприсваиванием) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">keys</td><td></td></tr>
+    <tr><td class="paramname">weight</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::pair&lt;iterator, bool&gt; </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../da/d9a/class_graph_ad264b88abe782f6840b3e7cbcdb962a3_icgraph.png" border="0" usemap="#ada/d9a/class_graph_ad264b88abe782f6840b3e7cbcdb962a3_icgraph" alt=""/></div>
+<map name="ada/d9a/class_graph_ad264b88abe782f6840b3e7cbcdb962a3_icgraph" id="ada/d9a/class_graph_ad264b88abe782f6840b3e7cbcdb962a3_icgraph">
+<area shape="rect" title="Вставка ребра (с переприсваиванием)" alt="" coords="104,5,299,31"/>
+<area shape="rect" href="../../df/d0a/main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,56,31"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a68dbdbc470b61d0fb03d01ed40cf3d8f" name="a68dbdbc470b61d0fb03d01ed40cf3d8f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68dbdbc470b61d0fb03d01ed40cf3d8f">&#9670;&#160;</a></span>insert_or_assign_node()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename key_type , typename value_type , typename weight_type &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::pair&lt; <a class="el" href="../../da/d9a/class_graph.html#ab0f6da23b75b55807ba43dd8d3b24385">iterator</a>, bool &gt; <a class="el" href="../../da/d9a/class_graph.html">Graph</a>&lt; key_type, value_type, weight_type &gt;::insert_or_assign_node </td>
+          <td>(</td>
+          <td class="paramtype">key_type&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">value_type&#160;</td>
+          <td class="paramname"><em>val</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Вставка узла (с переприсваиванием) </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td></td></tr>
+    <tr><td class="paramname">val</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::pair&lt;iterator, bool&gt; </dd></dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../da/d9a/class_graph_a68dbdbc470b61d0fb03d01ed40cf3d8f_cgraph.png" border="0" usemap="#ada/d9a/class_graph_a68dbdbc470b61d0fb03d01ed40cf3d8f_cgraph" alt=""/></div>
+<map name="ada/d9a/class_graph_a68dbdbc470b61d0fb03d01ed40cf3d8f_cgraph" id="ada/d9a/class_graph_a68dbdbc470b61d0fb03d01ed40cf3d8f_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,200,31"/>
+<area shape="rect" href="../../de/d99/class_graph_1_1_node.html#a19ecf5b85d0ef8b780a95216bb718f48" title="Значение в узле" alt="" coords="248,5,380,31"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../da/d9a/class_graph_a68dbdbc470b61d0fb03d01ed40cf3d8f_icgraph.png" border="0" usemap="#ada/d9a/class_graph_a68dbdbc470b61d0fb03d01ed40cf3d8f_icgraph" alt=""/></div>
+<map name="ada/d9a/class_graph_a68dbdbc470b61d0fb03d01ed40cf3d8f_icgraph" id="ada/d9a/class_graph_a68dbdbc470b61d0fb03d01ed40cf3d8f_icgraph">
+<area shape="rect" title=" " alt="" coords="104,5,299,31"/>
+<area shape="rect" href="../../df/d0a/main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,56,31"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -540,7 +1225,16 @@ template&lt;typename key_type , typename value_type , typename weight_type &gt; 
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>bool </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../da/d9a/class_graph_a19cb2d573605c67599bfc10bdaaaa462_icgraph.png" border="0" usemap="#ada/d9a/class_graph_a19cb2d573605c67599bfc10bdaaaa462_icgraph" alt=""/></div>
+<map name="ada/d9a/class_graph_a19cb2d573605c67599bfc10bdaaaa462_icgraph" id="ada/d9a/class_graph_a19cb2d573605c67599bfc10bdaaaa462_icgraph">
+<area shape="rect" title="Проверка на наличие петли" alt="" coords="104,5,193,31"/>
+<area shape="rect" href="../../df/d0a/main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,56,31"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -619,7 +1313,7 @@ template&lt;typename key_type , typename value_type , typename weight_type &gt; 
 </div>
 </div>
 <a id="af37f4db38e8b797d6d882a4ebd85297f" name="af37f4db38e8b797d6d882a4ebd85297f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af37f4db38e8b797d6d882a4ebd85297f">&#9670;&#160;</a></span>operator[]()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#af37f4db38e8b797d6d882a4ebd85297f">&#9670;&#160;</a></span>operator[]() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -630,7 +1324,7 @@ template&lt;typename key_type , typename value_type , typename weight_type &gt; 
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">Node &amp; <a class="el" href="../../da/d9a/class_graph.html">Graph</a>&lt; key_type, value_type, weight_type &gt;::operator[] </td>
+          <td class="memname"><a class="el" href="../../de/d99/class_graph_1_1_node.html">Node</a> &amp; <a class="el" href="../../da/d9a/class_graph.html">Graph</a>&lt; key_type, value_type, weight_type &gt;::operator[] </td>
           <td>(</td>
           <td class="paramtype">key_type&#160;</td>
           <td class="paramname"><em>key</em></td><td>)</td>
@@ -644,19 +1338,56 @@ template&lt;typename key_type , typename value_type , typename weight_type &gt; 
 </table>
 </div><div class="memdoc">
 
-<p>Доступ к элементу по ключу </p>
+<p>Доступ к узлу по ключу </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">key</td><td></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="../../de/d99/class_graph_1_1_node.html" title="Внутренний класс узла">Node</a>&amp; </dd></dl>
 
 </div>
 </div>
-<a id="a8fab7b514febaaef5eeb8beaf22f4d3e" name="a8fab7b514febaaef5eeb8beaf22f4d3e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8fab7b514febaaef5eeb8beaf22f4d3e">&#9670;&#160;</a></span>size()</h2>
+<a id="a0d1db70bbdba5a352affe97beee80bc7" name="a0d1db70bbdba5a352affe97beee80bc7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d1db70bbdba5a352affe97beee80bc7">&#9670;&#160;</a></span>operator[]() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename key_type , typename value_type , typename weight_type &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="../../de/d99/class_graph_1_1_node.html">Node</a> &amp; <a class="el" href="../../da/d9a/class_graph.html">Graph</a>&lt; key_type, value_type, weight_type &gt;::operator[] </td>
+          <td>(</td>
+          <td class="paramtype">key_type&#160;</td>
+          <td class="paramname"><em>key</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Доступ к узлу по ключу (const версия) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>const <a class="el" href="../../de/d99/class_graph_1_1_node.html" title="Внутренний класс узла">Node</a>&amp; </dd></dl>
+
+</div>
+</div>
+<a id="a0839bb03a69f090d411ae6246d143b96" name="a0839bb03a69f090d411ae6246d143b96"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0839bb03a69f090d411ae6246d143b96">&#9670;&#160;</a></span>size()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -670,23 +1401,33 @@ template&lt;typename key_type , typename value_type , typename weight_type &gt; 
           <td class="memname">size_t <a class="el" href="../../da/d9a/class_graph.html">Graph</a>&lt; key_type, value_type, weight_type &gt;::size </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 <p>Количество узлов в графе </p>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../da/d9a/class_graph_a0839bb03a69f090d411ae6246d143b96_icgraph.png" border="0" usemap="#ada/d9a/class_graph_a0839bb03a69f090d411ae6246d143b96_icgraph" alt=""/></div>
+<map name="ada/d9a/class_graph_a0839bb03a69f090d411ae6246d143b96_icgraph" id="ada/d9a/class_graph_a0839bb03a69f090d411ae6246d143b96_icgraph">
+<area shape="rect" title="Количество узлов в графе" alt="" coords="199,5,288,31"/>
+<area shape="rect" href="../../df/d0a/main_8cpp.html#a509e6a465ad03c3e646d0ccd43431639" title="Вывод графа в консоль" alt="" coords="104,5,151,31"/>
+<area shape="rect" href="../../df/d0a/main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,56,31"/>
+</map>
+</div>
 
 </div>
 </div>
-<a id="a34d5a820ffcd5595eb1cc31d43173379" name="a34d5a820ffcd5595eb1cc31d43173379"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a34d5a820ffcd5595eb1cc31d43173379">&#9670;&#160;</a></span>swap()</h2>
+<a id="a9a7e3026ab6d52f1063d3ed3570586e8" name="a9a7e3026ab6d52f1063d3ed3570586e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a7e3026ab6d52f1063d3ed3570586e8">&#9670;&#160;</a></span>swap()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -700,7 +1441,7 @@ template&lt;typename key_type , typename value_type , typename weight_type &gt; 
           <td class="memname">void <a class="el" href="../../da/d9a/class_graph.html">Graph</a>&lt; key_type, value_type, weight_type &gt;::swap </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="../../da/d9a/class_graph.html">Graph</a>&lt; key_type, value_type, weight_type &gt; &amp;&#160;</td>
-          <td class="paramname"><em>g</em></td><td>)</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -711,13 +1452,95 @@ template&lt;typename key_type , typename value_type , typename weight_type &gt; 
 </table>
 </div><div class="memdoc">
 
-<p>? swap ? </p>
+<p>Обмен местами (как метод класса) </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">g</td><td></td></tr>
+    <tr><td class="paramname">other</td><td></td></tr>
   </table>
   </dd>
 </dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../da/d9a/class_graph_a9a7e3026ab6d52f1063d3ed3570586e8_icgraph.png" border="0" usemap="#ada/d9a/class_graph_a9a7e3026ab6d52f1063d3ed3570586e8_icgraph" alt=""/></div>
+<map name="ada/d9a/class_graph_a9a7e3026ab6d52f1063d3ed3570586e8_icgraph" id="ada/d9a/class_graph_a9a7e3026ab6d52f1063d3ed3570586e8_icgraph">
+<area shape="rect" title="Обмен местами (как метод класса)" alt="" coords="104,5,199,31"/>
+<area shape="rect" href="../../df/d0a/main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,56,31"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">Friends And Related Function Documentation</h2>
+<a id="a3305372f4c98b2e9c275d874c54ffe2f" name="a3305372f4c98b2e9c275d874c54ffe2f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3305372f4c98b2e9c275d874c54ffe2f">&#9670;&#160;</a></span>swap</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename key_type , typename value_type , typename weight_type &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void swap </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../da/d9a/class_graph.html">Graph</a>&lt; key_type, value_type, weight_type &gt; &amp;&#160;</td>
+          <td class="paramname"><em>lhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../da/d9a/class_graph.html">Graph</a>&lt; key_type, value_type, weight_type &gt; &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Обмен местами (как дружественная функция) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lhs</td><td></td></tr>
+    <tr><td class="paramname">rhs</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a360b257cbb7061f08bda5eacc2c493a4" name="a360b257cbb7061f08bda5eacc2c493a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a360b257cbb7061f08bda5eacc2c493a4">&#9670;&#160;</a></span>graph</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename key_type , typename value_type , typename weight_type &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::map&lt;key_type, <a class="el" href="../../de/d99/class_graph_1_1_node.html">Node</a>&gt; <a class="el" href="../../da/d9a/class_graph.html">Graph</a>&lt; key_type, value_type, weight_type &gt;::graph</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -725,9 +1548,13 @@ template&lt;typename key_type , typename value_type , typename weight_type &gt; 
 <li>D:/hse/cpp/lab_3/<a class="el" href="../../da/db6/_graph_8h_source.html">Graph.h</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../da/d9a/class_graph.html">Graph</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
 </body>
 </html>

@@ -1,4 +1,8 @@
 var searchData=
 [
-  ['loop_0',['loop',['../da/d9a/class_graph.html#a19cb2d573605c67599bfc10bdaaaa462',1,'Graph']]]
+  ['insert_5fedge_0',['insert_edge',['../de/d99/class_graph_1_1_node.html#ab83fd115415ccd291e25380258a37455',1,'Graph::Node::insert_edge()'],['../da/d9a/class_graph.html#a7b357f0beb9d3d0ddf8c312bc76b13c1',1,'Graph::insert_edge(std::pair&lt; key_type, key_type &gt; keys, weight_type weight)']]],
+  ['insert_5fnode_1',['insert_node',['../da/d9a/class_graph.html#a774845f427dd6f3bb1504d67e5be6e30',1,'Graph']]],
+  ['insert_5for_5fassign_5fedge_2',['insert_or_assign_edge',['../de/d99/class_graph_1_1_node.html#a5c36cc7036a33da6f2de04a508ae9b52',1,'Graph::Node::insert_or_assign_edge()'],['../da/d9a/class_graph.html#ad264b88abe782f6840b3e7cbcdb962a3',1,'Graph::insert_or_assign_edge(std::pair&lt; key_type, key_type &gt; keys, weight_type weight)']]],
+  ['insert_5for_5fassign_5fnode_3',['insert_or_assign_node',['../da/d9a/class_graph.html#a68dbdbc470b61d0fb03d01ed40cf3d8f',1,'Graph']]],
+  ['inv_4',['inv',['../d1/d15/classlinalg_1_1_matrix.html#a1011d8b46b489eb5b48f68327613cefe',1,'linalg::Matrix']]]
 ];

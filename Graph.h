@@ -3,6 +3,9 @@
 #include <map>
 #include <limits>
 
+/*!
+ * \brief Структура точки для тестов
+ */
 struct Point { double x, y, z; };
 std::ostream& operator << (std::ostream& out, Point p) {
     std::cout << '(' << p.x << ',' << p.y << ',' << p.z << ')';
@@ -119,14 +122,14 @@ class Graph {
             return edges.end();
         }
         /*!
-         * \brief Итератор begin
+         * \brief Итератор begin (const версия)
          * @return
          */
         const_iterator begin() const noexcept {
             return edges.begin();
         }
         /*!
-         * \brief Итератор end
+         * \brief Итератор end (const версия)
          * @return
          */
         const_iterator end() const noexcept {
@@ -294,14 +297,14 @@ public:
         return graph.end();
     }
     /*!
-     * \brief Итератор begin
+     * \brief Итератор begin (const версия)
      * @return iterator
      */
     const_iterator begin() const noexcept {
         return graph.begin();
     }
     /*!
-     * \brief Итератор end
+     * \brief Итератор end (const версия)
      * @return iterator
      */
     const_iterator end() const noexcept {
@@ -388,6 +391,11 @@ public:
         return graph[key];
     }
 
+    /*!
+     * \brief Доступ к узлу по ключу (const версия)
+     * @param key
+     * @return const Node&
+     */
     const Node& operator[](key_type key) const {
         if (graph.find(key) == graph.end()) {
             throw std::logic_error("no such node in graph.\n");
@@ -549,6 +557,10 @@ public:
  */
 template<typename graph_t, typename weight_t, typename route_t, typename node_name_t>
 std::pair<weight_t, route_t> dijkstra(const graph_t& graph, node_name_t key_from, node_name_t key_to) {
+    graph[key_from];
+    graph[key_to];
+
+
     route_t route;
     weight_t route_weight;
 
@@ -569,7 +581,9 @@ std::pair<weight_t, route_t> dijkstra(const graph_t& graph, node_name_t key_from
     for (int i = 0; i < graph.size(); i++) {
         node_name_t v = -1;
 
-        for (auto [key, weight] : graph) {
+
+
+        for (auto [key, node] : graph) {
             if (!used[key] && (v == -1 || d[key] < d[v])) {
                 v = key;
             }
@@ -581,11 +595,18 @@ std::pair<weight_t, route_t> dijkstra(const graph_t& graph, node_name_t key_from
         used[v] = true;
 
         for (auto [to, len] : graph[v]) {
+            if ((std::numeric_limits<weight_t>::is_bounded) && len < 0) {
+                throw std::logic_error("there are negative weights in the graph.\n");
+            }
             if (d[v] + len < d[to]) {
                 d[to] = d[v] + len;
                 route_tmp[to] = v;
             }
         }
+    }
+
+    if (route_tmp.find(key_to) == route_tmp.end()) {
+        throw std::logic_error("nodes are not connected.\n");
     }
 
     for (auto key = key_to; route_tmp[key] < std::numeric_limits<node_name_t>::max(); ) {

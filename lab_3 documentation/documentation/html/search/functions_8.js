@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['size_0',['size',['../da/d9a/class_graph.html#a8fab7b514febaaef5eeb8beaf22f4d3e',1,'Graph']]],
-  ['swap_1',['swap',['../da/d9a/class_graph.html#a34d5a820ffcd5595eb1cc31d43173379',1,'Graph']]]
+  ['main_0',['main',['../d1/d3a/_c_make_c_compiler_id_8c.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main(int argc, char *argv[]):&#160;CMakeCCompilerId.c'],['../d3/d66/_c_make_c_x_x_compiler_id_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main(int argc, char *argv[]):&#160;CMakeCXXCompilerId.cpp'],['../df/d0a/main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main():&#160;main.cpp']]],
+  ['matrix_1',['Matrix',['../d1/d15/classlinalg_1_1_matrix.html#a61afd87a227b8b5d354c12a0eee14ce9',1,'linalg::Matrix::Matrix(int r=0, int c=1)'],['../d1/d15/classlinalg_1_1_matrix.html#af6cc5af7aa107598684cc1b7df2efc67',1,'linalg::Matrix::Matrix(const Matrix&lt; T &gt; &amp;other)'],['../d1/d15/classlinalg_1_1_matrix.html#ae8a74f4d0550b320c8f8309f0be44db3',1,'linalg::Matrix::Matrix(Matrix&lt; T &gt; &amp;&amp;other) noexcept'],['../d1/d15/classlinalg_1_1_matrix.html#aed9556bc33c0f30c59ac33b49ade1707',1,'linalg::Matrix::Matrix(const std::initializer_list&lt; T &gt; &amp;lst)'],['../d1/d15/classlinalg_1_1_matrix.html#a87e4d9709110713a1bb4686ccdbf595d',1,'linalg::Matrix::Matrix(const std::initializer_list&lt; std::initializer_list&lt; T &gt; &gt; &amp;lst)']]]
 ];
