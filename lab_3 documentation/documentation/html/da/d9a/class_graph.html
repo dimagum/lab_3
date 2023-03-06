@@ -111,8 +111,8 @@ Collaboration diagram for Graph&lt; key_type, value_type, weight_type &gt;:</div
 <div class="dyncontent">
 <div class="center"><img src="../../d1/dc2/class_graph__coll__graph.png" border="0" usemap="#a_graph_3_01key__type_00_01value__type_00_01weight__type_01_4_coll__map" alt="Collaboration graph"/></div>
 <map name="a_graph_3_01key__type_00_01value__type_00_01weight__type_01_4_coll__map" id="a_graph_3_01key__type_00_01value__type_00_01weight__type_01_4_coll__map">
-<area shape="rect" title="Шаблонный класс графа" alt="" coords="5,145,371,824"/>
-<area shape="rect" title=" " alt="" coords="85,5,291,83"/>
+<area shape="rect" title="Шаблонный класс графа" alt="" coords="5,145,348,809"/>
+<area shape="rect" title=" " alt="" coords="74,5,279,83"/>
 </map>
 </div>
 <table class="memberdecls">
@@ -125,8 +125,10 @@ Classes</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
 <tr class="memitem:ab0f6da23b75b55807ba43dd8d3b24385"><td class="memItemLeft" align="right" valign="top">typedef std::map&lt; key_type, <a class="el" href="../../de/d99/class_graph_1_1_node.html">Node</a> &gt;::iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d9a/class_graph.html#ab0f6da23b75b55807ba43dd8d3b24385">iterator</a></td></tr>
+<tr class="memdesc:ab0f6da23b75b55807ba43dd8d3b24385"><td class="mdescLeft">&#160;</td><td class="mdescRight">Псевдоним для итератора графа  <br /></td></tr>
 <tr class="separator:ab0f6da23b75b55807ba43dd8d3b24385"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acd8ab28e2f1d880ce081f236697376dd"><td class="memItemLeft" align="right" valign="top">typedef std::map&lt; key_type, <a class="el" href="../../de/d99/class_graph_1_1_node.html">Node</a> &gt;::const_iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d9a/class_graph.html#acd8ab28e2f1d880ce081f236697376dd">const_iterator</a></td></tr>
+<tr class="memdesc:acd8ab28e2f1d880ce081f236697376dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Псевдоним для константного итератора графа  <br /></td></tr>
 <tr class="separator:acd8ab28e2f1d880ce081f236697376dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
@@ -199,12 +201,12 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a774845f427dd6f3bb1504d67e5be6e30"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a68dbdbc470b61d0fb03d01ed40cf3d8f"><td class="memItemLeft" align="right" valign="top">std::pair&lt; <a class="el" href="../../da/d9a/class_graph.html#ab0f6da23b75b55807ba43dd8d3b24385">iterator</a>, bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d9a/class_graph.html#a68dbdbc470b61d0fb03d01ed40cf3d8f">insert_or_assign_node</a> (key_type key, value_type val)</td></tr>
 <tr class="separator:a68dbdbc470b61d0fb03d01ed40cf3d8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7b357f0beb9d3d0ddf8c312bc76b13c1"><td class="memItemLeft" align="right" valign="top">std::pair&lt; typename std::map&lt; key_type, weight_type &gt;<a class="el" href="../../da/d9a/class_graph.html#ab0f6da23b75b55807ba43dd8d3b24385">::iterator</a>, bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d9a/class_graph.html#a7b357f0beb9d3d0ddf8c312bc76b13c1">insert_edge</a> (std::pair&lt; key_type, key_type &gt; keys, weight_type weight)</td></tr>
-<tr class="memdesc:a7b357f0beb9d3d0ddf8c312bc76b13c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вставка ребра (без переприсваивания)  <br /></td></tr>
-<tr class="separator:a7b357f0beb9d3d0ddf8c312bc76b13c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad264b88abe782f6840b3e7cbcdb962a3"><td class="memItemLeft" align="right" valign="top">std::pair&lt; typename std::map&lt; key_type, weight_type &gt;<a class="el" href="../../da/d9a/class_graph.html#ab0f6da23b75b55807ba43dd8d3b24385">::iterator</a>, bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d9a/class_graph.html#ad264b88abe782f6840b3e7cbcdb962a3">insert_or_assign_edge</a> (std::pair&lt; key_type, key_type &gt; keys, weight_type weight)</td></tr>
-<tr class="memdesc:ad264b88abe782f6840b3e7cbcdb962a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вставка ребра (с переприсваиванием)  <br /></td></tr>
-<tr class="separator:ad264b88abe782f6840b3e7cbcdb962a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a674df88be5b40e131db671846cba7fb1"><td class="memItemLeft" align="right" valign="top">std::pair&lt; <a class="el" href="../../da/d9a/class_graph.html#ab0f6da23b75b55807ba43dd8d3b24385">iterator</a>, bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d9a/class_graph.html#a674df88be5b40e131db671846cba7fb1">insert_edge</a> (std::pair&lt; key_type, key_type &gt; keys, weight_type weight)</td></tr>
+<tr class="memdesc:a674df88be5b40e131db671846cba7fb1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вставка ребра (без переприсваивания)  <br /></td></tr>
+<tr class="separator:a674df88be5b40e131db671846cba7fb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa622ea8240211bc4c85c7fab9ae45312"><td class="memItemLeft" align="right" valign="top">std::pair&lt; <a class="el" href="../../da/d9a/class_graph.html#ab0f6da23b75b55807ba43dd8d3b24385">iterator</a>, bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d9a/class_graph.html#aa622ea8240211bc4c85c7fab9ae45312">insert_or_assign_edge</a> (std::pair&lt; key_type, key_type &gt; keys, weight_type weight)</td></tr>
+<tr class="memdesc:aa622ea8240211bc4c85c7fab9ae45312"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вставка ребра (с переприсваиванием)  <br /></td></tr>
+<tr class="separator:aa622ea8240211bc4c85c7fab9ae45312"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4b3fbc6de528ef92b9260009a69aec1b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d9a/class_graph.html#a4b3fbc6de528ef92b9260009a69aec1b">clear_edges</a> ()</td></tr>
 <tr class="memdesc:a4b3fbc6de528ef92b9260009a69aec1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Очистка рёбер графа  <br /></td></tr>
 <tr class="separator:a4b3fbc6de528ef92b9260009a69aec1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -255,6 +257,8 @@ template&lt;typename key_type , typename value_type , typename weight_type &gt; 
       </table>
 </div><div class="memdoc">
 
+<p>Псевдоним для константного итератора графа </p>
+
 </div>
 </div>
 <a id="ab0f6da23b75b55807ba43dd8d3b24385" name="ab0f6da23b75b55807ba43dd8d3b24385"></a>
@@ -270,6 +274,8 @@ template&lt;typename key_type , typename value_type , typename weight_type &gt; 
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Псевдоним для итератора графа </p>
 
 </div>
 </div>
@@ -409,7 +415,7 @@ template&lt;typename key_type , typename value_type , typename weight_type &gt; 
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="../../de/d99/class_graph_1_1_node.html" title="Внутренний класс узла">Node</a>&amp; </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Узел с таким ключом из графа. </dd></dl>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -448,7 +454,7 @@ template&lt;typename key_type , typename value_type , typename weight_type &gt; 
 </div><div class="memdoc">
 
 <p>Итератор begin (const версия) </p>
-<dl class="section return"><dt>Returns</dt><dd>iterator </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Константный итератор, показывающий на первый элемент графа. </dd></dl>
 
 </div>
 </div>
@@ -478,7 +484,7 @@ template&lt;typename key_type , typename value_type , typename weight_type &gt; 
 </div><div class="memdoc">
 
 <p>Итератор begin. </p>
-<dl class="section return"><dt>Returns</dt><dd>iterator </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Итератор, показывающий на первый элемент графа. </dd></dl>
 
 </div>
 </div>
@@ -508,7 +514,7 @@ template&lt;typename key_type , typename value_type , typename weight_type &gt; 
 </div><div class="memdoc">
 
 <p>Константный итератор cbegin. </p>
-<dl class="section return"><dt>Returns</dt><dd>const_iterator </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Константный итератор, показывающий на первый элемент графа. </dd></dl>
 
 </div>
 </div>
@@ -538,7 +544,7 @@ template&lt;typename key_type , typename value_type , typename weight_type &gt; 
 </div><div class="memdoc">
 
 <p>Константный итератор cend. </p>
-<dl class="section return"><dt>Returns</dt><dd>const_iterator </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Константный итератор, показывающий на элемент, следующий за последним элементом графа. </dd></dl>
 
 </div>
 </div>
@@ -651,7 +657,7 @@ template&lt;typename key_type , typename value_type , typename weight_type &gt; 
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>size_t </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Степень узла по входящим рёбрам. </dd></dl>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -697,7 +703,7 @@ template&lt;typename key_type , typename value_type , typename weight_type &gt; 
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>size_t </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Степень узла по выходящим рёбрам. </dd></dl>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -736,7 +742,7 @@ template&lt;typename key_type , typename value_type , typename weight_type &gt; 
 </div><div class="memdoc">
 
 <p>Проверка на пустоту графа </p>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>bool - true, если граф пустой, false - иначе. </dd></dl>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -776,7 +782,7 @@ template&lt;typename key_type , typename value_type , typename weight_type &gt; 
 </div><div class="memdoc">
 
 <p>Итератор end (const версия) </p>
-<dl class="section return"><dt>Returns</dt><dd>iterator </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Константный итератор, показывающий на элемент, следующий за последним элементом графа. </dd></dl>
 
 </div>
 </div>
@@ -806,7 +812,7 @@ template&lt;typename key_type , typename value_type , typename weight_type &gt; 
 </div><div class="memdoc">
 
 <p>Итератор end. </p>
-<dl class="section return"><dt>Returns</dt><dd>iterator </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Итератор, показывающий на элемент, следующий за последним элементом графа. </dd></dl>
 
 </div>
 </div>
@@ -843,7 +849,7 @@ template&lt;typename key_type , typename value_type , typename weight_type &gt; 
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>bool </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Значение bool (false - если узел не найден, true - иначе). </dd></dl>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -889,7 +895,7 @@ template&lt;typename key_type , typename value_type , typename weight_type &gt; 
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>bool </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Значение bool (false - если узел не найден, true - иначе). </dd></dl>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -935,7 +941,7 @@ template&lt;typename key_type , typename value_type , typename weight_type &gt; 
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>bool </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Значение bool (true, если узел найден и удалён, false - иначе). </dd></dl>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -948,8 +954,8 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a7b357f0beb9d3d0ddf8c312bc76b13c1" name="a7b357f0beb9d3d0ddf8c312bc76b13c1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7b357f0beb9d3d0ddf8c312bc76b13c1">&#9670;&#160;</a></span>insert_edge()</h2>
+<a id="a674df88be5b40e131db671846cba7fb1" name="a674df88be5b40e131db671846cba7fb1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a674df88be5b40e131db671846cba7fb1">&#9670;&#160;</a></span>insert_edge()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -960,7 +966,7 @@ template&lt;typename key_type , typename value_type , typename weight_type &gt; 
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::pair&lt; typename std::map&lt; key_type, weight_type &gt;<a class="el" href="../../da/d9a/class_graph.html#ab0f6da23b75b55807ba43dd8d3b24385">::iterator</a>, bool &gt; <a class="el" href="../../da/d9a/class_graph.html">Graph</a>&lt; key_type, value_type, weight_type &gt;::insert_edge </td>
+          <td class="memname">std::pair&lt; <a class="el" href="../../da/d9a/class_graph.html#ab0f6da23b75b55807ba43dd8d3b24385">iterator</a>, bool &gt; <a class="el" href="../../da/d9a/class_graph.html">Graph</a>&lt; key_type, value_type, weight_type &gt;::insert_edge </td>
           <td>(</td>
           <td class="paramtype">std::pair&lt; key_type, key_type &gt;&#160;</td>
           <td class="paramname"><em>keys</em>, </td>
@@ -992,12 +998,12 @@ template&lt;typename key_type , typename value_type , typename weight_type &gt; 
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>std::pair&lt;iterator, bool&gt; </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Значение std::pair&lt;iterator, bool&gt;, где итератор показывает на элемент графа, откуда идёт ребро, bool - true (если произошла вставка), false - иначе. </dd></dl>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="../../da/d9a/class_graph_a7b357f0beb9d3d0ddf8c312bc76b13c1_icgraph.png" border="0" usemap="#ada/d9a/class_graph_a7b357f0beb9d3d0ddf8c312bc76b13c1_icgraph" alt=""/></div>
-<map name="ada/d9a/class_graph_a7b357f0beb9d3d0ddf8c312bc76b13c1_icgraph" id="ada/d9a/class_graph_a7b357f0beb9d3d0ddf8c312bc76b13c1_icgraph">
+<div class="center"><img src="../../da/d9a/class_graph_a674df88be5b40e131db671846cba7fb1_icgraph.png" border="0" usemap="#ada/d9a/class_graph_a674df88be5b40e131db671846cba7fb1_icgraph" alt=""/></div>
+<map name="ada/d9a/class_graph_a674df88be5b40e131db671846cba7fb1_icgraph" id="ada/d9a/class_graph_a674df88be5b40e131db671846cba7fb1_icgraph">
 <area shape="rect" title="Вставка ребра (без переприсваивания)" alt="" coords="104,5,236,31"/>
 <area shape="rect" href="../../df/d0a/main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,56,31"/>
 </map>
@@ -1049,7 +1055,7 @@ template&lt;typename key_type , typename value_type , typename weight_type &gt; 
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>std::pair&lt;iterator, bool&gt; </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Значение std::pair&lt;iterator, bool&gt;, где итератор показывает на элемент графа, bool - true (если произошла вставка), false - иначе. </dd></dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1071,8 +1077,8 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="ad264b88abe782f6840b3e7cbcdb962a3" name="ad264b88abe782f6840b3e7cbcdb962a3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad264b88abe782f6840b3e7cbcdb962a3">&#9670;&#160;</a></span>insert_or_assign_edge()</h2>
+<a id="aa622ea8240211bc4c85c7fab9ae45312" name="aa622ea8240211bc4c85c7fab9ae45312"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa622ea8240211bc4c85c7fab9ae45312">&#9670;&#160;</a></span>insert_or_assign_edge()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1083,7 +1089,7 @@ template&lt;typename key_type , typename value_type , typename weight_type &gt; 
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::pair&lt; typename std::map&lt; key_type, weight_type &gt;<a class="el" href="../../da/d9a/class_graph.html#ab0f6da23b75b55807ba43dd8d3b24385">::iterator</a>, bool &gt; <a class="el" href="../../da/d9a/class_graph.html">Graph</a>&lt; key_type, value_type, weight_type &gt;::insert_or_assign_edge </td>
+          <td class="memname">std::pair&lt; <a class="el" href="../../da/d9a/class_graph.html#ab0f6da23b75b55807ba43dd8d3b24385">iterator</a>, bool &gt; <a class="el" href="../../da/d9a/class_graph.html">Graph</a>&lt; key_type, value_type, weight_type &gt;::insert_or_assign_edge </td>
           <td>(</td>
           <td class="paramtype">std::pair&lt; key_type, key_type &gt;&#160;</td>
           <td class="paramname"><em>keys</em>, </td>
@@ -1115,12 +1121,12 @@ template&lt;typename key_type , typename value_type , typename weight_type &gt; 
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>std::pair&lt;iterator, bool&gt; </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Значение std::pair&lt;iterator, bool&gt;, где итератор показывает на элемент графа, откуда идёт ребро, bool - true (если произошла вставка), false - иначе. </dd></dl>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="../../da/d9a/class_graph_ad264b88abe782f6840b3e7cbcdb962a3_icgraph.png" border="0" usemap="#ada/d9a/class_graph_ad264b88abe782f6840b3e7cbcdb962a3_icgraph" alt=""/></div>
-<map name="ada/d9a/class_graph_ad264b88abe782f6840b3e7cbcdb962a3_icgraph" id="ada/d9a/class_graph_ad264b88abe782f6840b3e7cbcdb962a3_icgraph">
+<div class="center"><img src="../../da/d9a/class_graph_aa622ea8240211bc4c85c7fab9ae45312_icgraph.png" border="0" usemap="#ada/d9a/class_graph_aa622ea8240211bc4c85c7fab9ae45312_icgraph" alt=""/></div>
+<map name="ada/d9a/class_graph_aa622ea8240211bc4c85c7fab9ae45312_icgraph" id="ada/d9a/class_graph_aa622ea8240211bc4c85c7fab9ae45312_icgraph">
 <area shape="rect" title="Вставка ребра (с переприсваиванием)" alt="" coords="104,5,299,31"/>
 <area shape="rect" href="../../df/d0a/main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,56,31"/>
 </map>
@@ -1170,7 +1176,7 @@ template&lt;typename key_type , typename value_type , typename weight_type &gt; 
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>std::pair&lt;iterator, bool&gt; </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Значение std::pair&lt;iterator, bool&gt;, где итератор показывает на элемент графа, bool - true (если произошла вставка), false - иначе. </dd></dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1225,7 +1231,7 @@ template&lt;typename key_type , typename value_type , typename weight_type &gt; 
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>bool </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>bool - true, если петля у узла есть, false - иначе. </dd></dl>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -1271,7 +1277,7 @@ template&lt;typename key_type , typename value_type , typename weight_type &gt; 
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Граф после присваивания. </dd></dl>
 
 </div>
 </div>
@@ -1308,7 +1314,7 @@ template&lt;typename key_type , typename value_type , typename weight_type &gt; 
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Граф после присваивания. </dd></dl>
 
 </div>
 </div>
@@ -1345,7 +1351,7 @@ template&lt;typename key_type , typename value_type , typename weight_type &gt; 
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="../../de/d99/class_graph_1_1_node.html" title="Внутренний класс узла">Node</a>&amp; </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Узел с таким ключом из графа. </dd></dl>
 
 </div>
 </div>
@@ -1382,7 +1388,7 @@ template&lt;typename key_type , typename value_type , typename weight_type &gt; 
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>const <a class="el" href="../../de/d99/class_graph_1_1_node.html" title="Внутренний класс узла">Node</a>&amp; </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Узел с таким ключом из графа. </dd></dl>
 
 </div>
 </div>
@@ -1412,7 +1418,7 @@ template&lt;typename key_type , typename value_type , typename weight_type &gt; 
 </div><div class="memdoc">
 
 <p>Количество узлов в графе </p>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Размер графа (число узлов). </dd></dl>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">

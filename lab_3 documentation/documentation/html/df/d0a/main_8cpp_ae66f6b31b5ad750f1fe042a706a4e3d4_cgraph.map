@@ -8,9 +8,9 @@
 <area shape="rect" id="node7" href="$da/d9a/class_graph.html#a3ffdb86c5fa435f6dfdc0403c4ebce62" title="Очистка рёбер, выходящих из узла" alt="" coords="105,252,297,277"/>
 <area shape="rect" id="node8" href="$da/d9a/class_graph.html#a8fed563e33cdc9eb51224e7c2af56265" title="Очистка рёбер, входящих в узел" alt="" coords="112,301,291,327"/>
 <area shape="rect" id="node9" href="$da/d9a/class_graph.html#a628c03d78ad5824662fff8b587d9061d" title="Удаление узла" alt="" coords="135,351,267,376"/>
-<area shape="rect" id="node10" href="$da/d9a/class_graph.html#a7b357f0beb9d3d0ddf8c312bc76b13c1" title="Вставка ребра (без переприсваивания)" alt="" coords="135,400,267,425"/>
+<area shape="rect" id="node10" href="$da/d9a/class_graph.html#a674df88be5b40e131db671846cba7fb1" title="Вставка ребра (без переприсваивания)" alt="" coords="135,400,267,425"/>
 <area shape="rect" id="node11" href="$da/d9a/class_graph.html#a774845f427dd6f3bb1504d67e5be6e30" title="Вставка узла (без переприсваивания)" alt="" coords="135,449,267,475"/>
-<area shape="rect" id="node13" href="$da/d9a/class_graph.html#ad264b88abe782f6840b3e7cbcdb962a3" title="Вставка ребра (с переприсваиванием)" alt="" coords="104,499,299,524"/>
+<area shape="rect" id="node13" href="$da/d9a/class_graph.html#aa622ea8240211bc4c85c7fab9ae45312" title="Вставка ребра (с переприсваиванием)" alt="" coords="104,499,299,524"/>
 <area shape="rect" id="node14" href="$da/d9a/class_graph.html#a68dbdbc470b61d0fb03d01ed40cf3d8f" title=" " alt="" coords="104,548,299,573"/>
 <area shape="rect" id="node15" href="$da/d9a/class_graph.html#a19cb2d573605c67599bfc10bdaaaa462" title="Проверка на наличие петли" alt="" coords="157,597,246,623"/>
 <area shape="rect" id="node16" href="$df/d0a/main_8cpp.html#a509e6a465ad03c3e646d0ccd43431639" title="Вывод графа в консоль" alt="" coords="178,647,225,672"/>

@@ -95,7 +95,6 @@ $(document).ready(function(){initNavTree('de/d99/class_graph_1_1_node.html','../
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
-<a href="#friends">Friends</a> &#124;
 <a href="../../df/d0c/class_graph_1_1_node-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">Graph&lt; key_type, value_type, weight_type &gt;::Node Class Reference</div></div>
 </div><!--header-->
@@ -117,8 +116,10 @@ Collaboration diagram for Graph&lt; key_type, value_type, weight_type &gt;::Node
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
 <tr class="memitem:a8eb6857712bd2a5cee4ff628c3bb1509"><td class="memItemLeft" align="right" valign="top">typedef std::map&lt; key_type, weight_type &gt;::iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d99/class_graph_1_1_node.html#a8eb6857712bd2a5cee4ff628c3bb1509">iterator</a></td></tr>
+<tr class="memdesc:a8eb6857712bd2a5cee4ff628c3bb1509"><td class="mdescLeft">&#160;</td><td class="mdescRight">Псевдоним для итератора узла  <br /></td></tr>
 <tr class="separator:a8eb6857712bd2a5cee4ff628c3bb1509"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae9ee169d42ce0d071f2994c31e75d6e8"><td class="memItemLeft" align="right" valign="top">typedef std::map&lt; key_type, weight_type &gt;::const_iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d99/class_graph_1_1_node.html#ae9ee169d42ce0d071f2994c31e75d6e8">const_iterator</a></td></tr>
+<tr class="memdesc:ae9ee169d42ce0d071f2994c31e75d6e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Псевдоним для константного итератора узла  <br /></td></tr>
 <tr class="separator:ae9ee169d42ce0d071f2994c31e75d6e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
@@ -133,6 +134,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a1572e4b71dc816d6ae58373053308a18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор перемещения  <br /></td></tr>
 <tr class="separator:a1572e4b71dc816d6ae58373053308a18"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa60dec71398eb1ced481460ba9779a31"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d99/class_graph_1_1_node.html#aa60dec71398eb1ced481460ba9779a31">Node</a> (const value_type &amp;other)</td></tr>
+<tr class="memdesc:aa60dec71398eb1ced481460ba9779a31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор для значения в узле  <br /></td></tr>
 <tr class="separator:aa60dec71398eb1ced481460ba9779a31"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac15de3d90f7365bd338b9c8836e717fa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d99/class_graph_1_1_node.html">Node</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d99/class_graph_1_1_node.html#ac15de3d90f7365bd338b9c8836e717fa">operator=</a> (const <a class="el" href="../../de/d99/class_graph_1_1_node.html">Node</a> &amp;rhs)=default</td></tr>
 <tr class="memdesc:ac15de3d90f7365bd338b9c8836e717fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Оператор копирующего присваивания  <br /></td></tr>
@@ -141,18 +143,19 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:ad66fcf4f4afe94e6a734eb9151a33351"><td class="mdescLeft">&#160;</td><td class="mdescRight">Оператор перемещающего присваивания  <br /></td></tr>
 <tr class="separator:ad66fcf4f4afe94e6a734eb9151a33351"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7d10c9a6a107759991799f066d3e9717"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d99/class_graph_1_1_node.html">Node</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d99/class_graph_1_1_node.html#a7d10c9a6a107759991799f066d3e9717">operator=</a> (const value_type &amp;other)</td></tr>
+<tr class="memdesc:a7d10c9a6a107759991799f066d3e9717"><td class="mdescLeft">&#160;</td><td class="mdescRight">Оператор присваивания для значения в узле  <br /></td></tr>
 <tr class="separator:a7d10c9a6a107759991799f066d3e9717"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ada8f3a9acb7b20e6d2e585092b336b81"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d99/class_graph_1_1_node.html#ada8f3a9acb7b20e6d2e585092b336b81">empty</a> ()</td></tr>
-<tr class="memdesc:ada8f3a9acb7b20e6d2e585092b336b81"><td class="mdescLeft">&#160;</td><td class="mdescRight">Проверка на пустоту узла  <br /></td></tr>
-<tr class="separator:ada8f3a9acb7b20e6d2e585092b336b81"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab28734c0e6ce840686d6ac9667e44519"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d99/class_graph_1_1_node.html#ab28734c0e6ce840686d6ac9667e44519">size</a> ()</td></tr>
-<tr class="memdesc:ab28734c0e6ce840686d6ac9667e44519"><td class="mdescLeft">&#160;</td><td class="mdescRight">Количество исходящих рёбер  <br /></td></tr>
-<tr class="separator:ab28734c0e6ce840686d6ac9667e44519"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d96f4f622ec4af72cac05c69c8185a2"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d99/class_graph_1_1_node.html#a2d96f4f622ec4af72cac05c69c8185a2">empty</a> () const</td></tr>
+<tr class="memdesc:a2d96f4f622ec4af72cac05c69c8185a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Проверка на пустоту узла  <br /></td></tr>
+<tr class="separator:a2d96f4f622ec4af72cac05c69c8185a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a691ba9bfffb5fc3025253a474479eeff"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d99/class_graph_1_1_node.html#a691ba9bfffb5fc3025253a474479eeff">size</a> () const</td></tr>
+<tr class="memdesc:a691ba9bfffb5fc3025253a474479eeff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Количество исходящих рёбер  <br /></td></tr>
+<tr class="separator:a691ba9bfffb5fc3025253a474479eeff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a19ecf5b85d0ef8b780a95216bb718f48"><td class="memItemLeft" align="right" valign="top">value_type &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d99/class_graph_1_1_node.html#a19ecf5b85d0ef8b780a95216bb718f48">value</a> ()</td></tr>
 <tr class="memdesc:a19ecf5b85d0ef8b780a95216bb718f48"><td class="mdescLeft">&#160;</td><td class="mdescRight">Значение в узле  <br /></td></tr>
 <tr class="separator:a19ecf5b85d0ef8b780a95216bb718f48"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a66992c3e011806070fb2fc9f5c1009d6"><td class="memItemLeft" align="right" valign="top">const value_type &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d99/class_graph_1_1_node.html#a66992c3e011806070fb2fc9f5c1009d6">value</a> () const</td></tr>
-<tr class="memdesc:a66992c3e011806070fb2fc9f5c1009d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Значение в узле  <br /></td></tr>
+<tr class="memdesc:a66992c3e011806070fb2fc9f5c1009d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Значение в узле (const версия)  <br /></td></tr>
 <tr class="separator:a66992c3e011806070fb2fc9f5c1009d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7a0b24995854fded97286c5befa85ac7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d99/class_graph_1_1_node.html#a7a0b24995854fded97286c5befa85ac7">clear</a> ()</td></tr>
 <tr class="memdesc:a7a0b24995854fded97286c5befa85ac7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Удаление исходящих рёбер  <br /></td></tr>
@@ -170,14 +173,16 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:af555576884095f72c48d356b40f9a7c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Итератор end (const версия)  <br /></td></tr>
 <tr class="separator:af555576884095f72c48d356b40f9a7c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa98a9d60b3888aaa694442791a79ad12"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d99/class_graph_1_1_node.html#ae9ee169d42ce0d071f2994c31e75d6e8">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d99/class_graph_1_1_node.html#aa98a9d60b3888aaa694442791a79ad12">cbegin</a> () const</td></tr>
-<tr class="memdesc:aa98a9d60b3888aaa694442791a79ad12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Итератор begin.  <br /></td></tr>
+<tr class="memdesc:aa98a9d60b3888aaa694442791a79ad12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Итератор cbegin.  <br /></td></tr>
 <tr class="separator:aa98a9d60b3888aaa694442791a79ad12"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a493af2007f6a107bcf8dd41010c149ef"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d99/class_graph_1_1_node.html#ae9ee169d42ce0d071f2994c31e75d6e8">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d99/class_graph_1_1_node.html#a493af2007f6a107bcf8dd41010c149ef">cend</a> () const</td></tr>
-<tr class="memdesc:a493af2007f6a107bcf8dd41010c149ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Итератор end.  <br /></td></tr>
+<tr class="memdesc:a493af2007f6a107bcf8dd41010c149ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Итератор cend.  <br /></td></tr>
 <tr class="separator:a493af2007f6a107bcf8dd41010c149ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a75f416787136c58a7e45501b2964c604"><td class="memItemLeft" align="right" valign="top">weight_type &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d99/class_graph_1_1_node.html#a75f416787136c58a7e45501b2964c604">operator[]</a> (key_type key)</td></tr>
+<tr class="memdesc:a75f416787136c58a7e45501b2964c604"><td class="mdescLeft">&#160;</td><td class="mdescRight">Доступ к элементу узла  <br /></td></tr>
 <tr class="separator:a75f416787136c58a7e45501b2964c604"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1f6ed390f62903f696837e8c7dd6675c"><td class="memItemLeft" align="right" valign="top">const weight_type &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d99/class_graph_1_1_node.html#a1f6ed390f62903f696837e8c7dd6675c">operator[]</a> (key_type key) const</td></tr>
+<tr class="memdesc:a1f6ed390f62903f696837e8c7dd6675c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Доступ к элементу узла (const версия)  <br /></td></tr>
 <tr class="separator:a1f6ed390f62903f696837e8c7dd6675c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab83fd115415ccd291e25380258a37455"><td class="memItemLeft" align="right" valign="top">std::pair&lt; <a class="el" href="../../de/d99/class_graph_1_1_node.html#a8eb6857712bd2a5cee4ff628c3bb1509">iterator</a>, bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d99/class_graph_1_1_node.html#ab83fd115415ccd291e25380258a37455">insert_edge</a> (key_type key, weight_type weight)</td></tr>
 <tr class="memdesc:ab83fd115415ccd291e25380258a37455"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вставка ребра в узел (без переприсваивания)  <br /></td></tr>
@@ -195,12 +200,6 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a9c3ed26c729df2f0a2f2f8bd0a310665"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3009e7e928b14edf056b017ab63c328f"><td class="memItemLeft" align="right" valign="top">std::map&lt; key_type, weight_type &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d99/class_graph_1_1_node.html#a3009e7e928b14edf056b017ab63c328f">edges</a></td></tr>
 <tr class="separator:a3009e7e928b14edf056b017ab63c328f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
-Friends</h2></td></tr>
-<tr class="memitem:a7a9eeb9777c59bfc82b4eff6f8df1cc6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d99/class_graph_1_1_node.html#a7a9eeb9777c59bfc82b4eff6f8df1cc6">operator==</a> (const <a class="el" href="../../de/d99/class_graph_1_1_node.html">Node</a> &amp;lhs, const <a class="el" href="../../de/d99/class_graph_1_1_node.html">Node</a> &amp;rhs)</td></tr>
-<tr class="memdesc:a7a9eeb9777c59bfc82b4eff6f8df1cc6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Оператор сравнения ==.  <br /></td></tr>
-<tr class="separator:a7a9eeb9777c59bfc82b4eff6f8df1cc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename key_type, typename value_type, typename weight_type&gt;<br />
@@ -220,6 +219,8 @@ template&lt;typename key_type , typename value_type , typename weight_type &gt; 
       </table>
 </div><div class="memdoc">
 
+<p>Псевдоним для константного итератора узла </p>
+
 </div>
 </div>
 <a id="a8eb6857712bd2a5cee4ff628c3bb1509" name="a8eb6857712bd2a5cee4ff628c3bb1509"></a>
@@ -235,6 +236,8 @@ template&lt;typename key_type , typename value_type , typename weight_type &gt; 
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Псевдоним для итератора узла </p>
 
 </div>
 </div>
@@ -366,6 +369,14 @@ template&lt;typename key_type , typename value_type , typename weight_type &gt; 
 </table>
 </div><div class="memdoc">
 
+<p>Конструктор для значения в узле </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -395,7 +406,7 @@ template&lt;typename key_type , typename value_type , typename weight_type &gt; 
 </div><div class="memdoc">
 
 <p>Итератор begin (const версия) </p>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Константный итератор, показывающий на первый элемент узла. </dd></dl>
 
 </div>
 </div>
@@ -425,7 +436,7 @@ template&lt;typename key_type , typename value_type , typename weight_type &gt; 
 </div><div class="memdoc">
 
 <p>Итератор begin. </p>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Итератор, показывающий на первый элемент узла. </dd></dl>
 
 </div>
 </div>
@@ -454,8 +465,8 @@ template&lt;typename key_type , typename value_type , typename weight_type &gt; 
 </table>
 </div><div class="memdoc">
 
-<p>Итератор begin. </p>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<p>Итератор cbegin. </p>
+<dl class="section return"><dt>Returns</dt><dd>Константный итератор, показывающий на первый элемент узла. </dd></dl>
 
 </div>
 </div>
@@ -484,8 +495,8 @@ template&lt;typename key_type , typename value_type , typename weight_type &gt; 
 </table>
 </div><div class="memdoc">
 
-<p>Итератор end. </p>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<p>Итератор cend. </p>
+<dl class="section return"><dt>Returns</dt><dd>Константный итератор, показывающий на элемент, следующий за последним элементом узла. </dd></dl>
 
 </div>
 </div>
@@ -518,8 +529,8 @@ template&lt;typename key_type , typename value_type , typename weight_type &gt; 
 
 </div>
 </div>
-<a id="ada8f3a9acb7b20e6d2e585092b336b81" name="ada8f3a9acb7b20e6d2e585092b336b81"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ada8f3a9acb7b20e6d2e585092b336b81">&#9670;&#160;</a></span>empty()</h2>
+<a id="a2d96f4f622ec4af72cac05c69c8185a2" name="a2d96f4f622ec4af72cac05c69c8185a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2d96f4f622ec4af72cac05c69c8185a2">&#9670;&#160;</a></span>empty()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -530,21 +541,21 @@ template&lt;typename key_type , typename value_type , typename weight_type &gt; 
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="../../da/d9a/class_graph.html">Graph</a>&lt; key_type, value_type, weight_type &gt;::Node::empty </td>
+          <td class="memname">constexpr bool <a class="el" href="../../da/d9a/class_graph.html">Graph</a>&lt; key_type, value_type, weight_type &gt;::Node::empty </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 <p>Проверка на пустоту узла </p>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>bool - true если узел пустой, false - иначе. </dd></dl>
 
 </div>
 </div>
@@ -574,7 +585,7 @@ template&lt;typename key_type , typename value_type , typename weight_type &gt; 
 </div><div class="memdoc">
 
 <p>Итератор end (const версия) </p>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Константный итератор, показывающий на элемент, следующий за последним элементом узла. </dd></dl>
 
 </div>
 </div>
@@ -604,7 +615,7 @@ template&lt;typename key_type , typename value_type , typename weight_type &gt; 
 </div><div class="memdoc">
 
 <p>Итератор end. </p>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Итератор, показывающий на элемент, следующий за последним элементом узла. </dd></dl>
 
 </div>
 </div>
@@ -641,7 +652,7 @@ template&lt;typename key_type , typename value_type , typename weight_type &gt; 
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>bool </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>bool - false если такого ребра нет, true - иначе. </dd></dl>
 
 </div>
 </div>
@@ -689,7 +700,7 @@ template&lt;typename key_type , typename value_type , typename weight_type &gt; 
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>std::pair&lt;iterator, bool&gt; </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Значение std::pair&lt;iterator, bool&gt;, где итератор показывает на элемент узла, откуда идёт ребро, bool - true (если произошла вставка), false - иначе. </dd></dl>
 
 </div>
 </div>
@@ -737,7 +748,7 @@ template&lt;typename key_type , typename value_type , typename weight_type &gt; 
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>std::pair&lt;iterator, bool&gt; </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Значение std::pair&lt;iterator, bool&gt;, где итератор показывает на элемент узла, откуда идёт ребро, bool - true (если произошла вставка), false - иначе. </dd></dl>
 
 </div>
 </div>
@@ -774,7 +785,7 @@ template&lt;typename key_type , typename value_type , typename weight_type &gt; 
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Узел после присваивания </dd></dl>
 
 </div>
 </div>
@@ -803,6 +814,15 @@ template&lt;typename key_type , typename value_type , typename weight_type &gt; 
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Оператор присваивания для значения в узле </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Узел после присваивания </dd></dl>
 
 </div>
 </div>
@@ -839,7 +859,7 @@ template&lt;typename key_type , typename value_type , typename weight_type &gt; 
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Узел после присваивания </dd></dl>
 
 </div>
 </div>
@@ -869,6 +889,15 @@ template&lt;typename key_type , typename value_type , typename weight_type &gt; 
 </table>
 </div><div class="memdoc">
 
+<p>Доступ к элементу узла </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Вес соответствующего ребра. </dd></dl>
+
 </div>
 </div>
 <a id="a1f6ed390f62903f696837e8c7dd6675c" name="a1f6ed390f62903f696837e8c7dd6675c"></a>
@@ -897,10 +926,19 @@ template&lt;typename key_type , typename value_type , typename weight_type &gt; 
 </table>
 </div><div class="memdoc">
 
+<p>Доступ к элементу узла (const версия) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Вес соответствующего ребра. </dd></dl>
+
 </div>
 </div>
-<a id="ab28734c0e6ce840686d6ac9667e44519" name="ab28734c0e6ce840686d6ac9667e44519"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab28734c0e6ce840686d6ac9667e44519">&#9670;&#160;</a></span>size()</h2>
+<a id="a691ba9bfffb5fc3025253a474479eeff" name="a691ba9bfffb5fc3025253a474479eeff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a691ba9bfffb5fc3025253a474479eeff">&#9670;&#160;</a></span>size()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -914,7 +952,7 @@ template&lt;typename key_type , typename value_type , typename weight_type &gt; 
           <td class="memname">size_t <a class="el" href="../../da/d9a/class_graph.html">Graph</a>&lt; key_type, value_type, weight_type &gt;::Node::size </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
   </td>
@@ -925,7 +963,7 @@ template&lt;typename key_type , typename value_type , typename weight_type &gt; 
 </div><div class="memdoc">
 
 <p>Количество исходящих рёбер </p>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Количество исходящих из узла рёбер </dd></dl>
 
 </div>
 </div>
@@ -955,7 +993,7 @@ template&lt;typename key_type , typename value_type , typename weight_type &gt; 
 </div><div class="memdoc">
 
 <p>Значение в узле </p>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Значение, находящееся в узле </dd></dl>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -995,57 +1033,8 @@ template&lt;typename key_type , typename value_type , typename weight_type &gt; 
 </table>
 </div><div class="memdoc">
 
-<p>Значение в узле </p>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
-
-</div>
-</div>
-<h2 class="groupheader">Friends And Related Function Documentation</h2>
-<a id="a7a9eeb9777c59bfc82b4eff6f8df1cc6" name="a7a9eeb9777c59bfc82b4eff6f8df1cc6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7a9eeb9777c59bfc82b4eff6f8df1cc6">&#9670;&#160;</a></span>operator==</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename key_type , typename value_type , typename weight_type &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool operator== </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="../../de/d99/class_graph_1_1_node.html">Node</a> &amp;&#160;</td>
-          <td class="paramname"><em>lhs</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="../../de/d99/class_graph_1_1_node.html">Node</a> &amp;&#160;</td>
-          <td class="paramname"><em>rhs</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Оператор сравнения ==. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">lhs</td><td></td></tr>
-    <tr><td class="paramname">rhs</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<p>Значение в узле (const версия) </p>
+<dl class="section return"><dt>Returns</dt><dd>Значение, находящееся в узле </dd></dl>
 
 </div>
 </div>
