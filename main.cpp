@@ -5,6 +5,14 @@
 #include <Graph.h>
 
 
+/*!
+ * \brief Структура точки для тестов
+ */
+struct Point { double x, y, z; };
+std::ostream& operator << (std::ostream& out, Point p) {
+    std::cout << '(' << p.x << ',' << p.y << ',' << p.z << ')';
+    return out;
+}
 
 
 /*!

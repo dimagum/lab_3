@@ -4,16 +4,6 @@
 #include <limits>
 
 /*!
- * \brief Структура точки для тестов
- */
-struct Point { double x, y, z; };
-std::ostream& operator << (std::ostream& out, Point p) {
-    std::cout << '(' << p.x << ',' << p.y << ',' << p.z << ')';
-    return out;
-}
-
-
-/*!
  * \brief Шаблонный класс графа
  * @tparam key_type
  * @tparam value_type
@@ -45,6 +35,10 @@ class Graph {
          */
         Node(Node&& other)  noexcept = default;
 
+        /*!
+         * \brief Конструктор для значения в узле
+         * @param other
+         */
         explicit Node(const value_type& other) {
             val = other;
         }
@@ -52,17 +46,22 @@ class Graph {
         /*!
          * \brief Оператор копирующего присваивания
          * @param rhs
-         * @return
+         * @return Узел после присваивания
          */
         Node& operator=(const Node& rhs) = default;
 
         /*!
          * \brief Оператор перемещающего присваивания
          * @param rhs
-         * @return
+         * @return Узел после присваивания
          */
         Node& operator=(Node&& rhs)  noexcept = default;
 
+        /*!
+         * \brief Оператор присваивания для значения в узле
+         * @param other
+         * @return Узел после присваивания
+         */
         Node& operator=(const value_type& other) {
             val = other;
             return *this;
@@ -71,28 +70,28 @@ class Graph {
 
         /*!
          * \brief Проверка на пустоту узла
-         * @return
+         * @return bool - true если узел пустой, false - иначе.
          */
-        bool empty() {
+        constexpr bool empty() const {
             return edges.empty();
         }
         /*!
          * \brief Количество исходящих рёбер
-         * @return
+         * @return Количество исходящих из узла рёбер
          */
-        size_t size() {
+        size_t size() const {
             return edges.size();
         }
         /*!
          * \brief Значение в узле
-         * @return
+         * @return Значение, находящееся в узле
          */
         value_type & value() {
             return val;
         }
         /*!
-         * \brief Значение в узле
-         * @return
+         * \brief Значение в узле (const версия)
+         * @return Значение, находящееся в узле
          */
         const value_type & value() const {
             return val;
@@ -104,75 +103,81 @@ class Graph {
             edges.clear();
         }
 
+        /*!
+         * \brief Псевдоним для итератора узла
+         */
         typedef typename std::map<key_type, weight_type>::iterator iterator;
+        /*!
+         * \brief Псевдоним для константного итератора узла
+         */
         typedef typename std::map<key_type, weight_type>::const_iterator const_iterator;
 
         /*!
          * \brief Итератор begin
-         * @return
+         * @return Итератор, показывающий на первый элемент узла.
          */
         iterator begin() noexcept {
             return edges.begin();
         }
         /*!
          * \brief Итератор end
-         * @return
+         * @return Итератор, показывающий на элемент, следующий за последним элементом узла.
          */
         iterator end() noexcept {
             return edges.end();
         }
         /*!
          * \brief Итератор begin (const версия)
-         * @return
+         * @return Константный итератор, показывающий на первый элемент узла.
          */
         const_iterator begin() const noexcept {
             return edges.begin();
         }
         /*!
          * \brief Итератор end (const версия)
-         * @return
+         * @return Константный итератор, показывающий на элемент, следующий за последним элементом узла.
          */
         const_iterator end() const noexcept {
             return edges.end();
         }
         /*!
-         * \brief Итератор begin
-         * @return
+         * \brief Итератор cbegin
+         * @return Константный итератор, показывающий на первый элемент узла.
          */
         const_iterator cbegin() const {
             return edges.cbegin();
         }
         /*!
-         * \brief Итератор end
-         * @return
+         * \brief Итератор cend
+         * @return Константный итератор, показывающий на элемент, следующий за последним элементом узла.
          */
         const_iterator cend() const {
             return edges.cend();
         }
 
+        /*!
+         * \brief Доступ к элементу узла
+         * @param key
+         * @return Вес соответствующего ребра.
+         */
         weight_type& operator[](key_type key) {
             return edges[key];
         }
 
+        /*!
+         * \brief Доступ к элементу узла (const версия)
+         * @param key
+         * @return Вес соответствующего ребра.
+         */
         const weight_type& operator[](key_type key) const {
             return edges[key];
-        }
-
-        /*!
-         * \brief Оператор сравнения ==
-         * @param lhs
-         * @param rhs
-         * @return
-         */
-        friend bool operator==(const Node& lhs, const Node& rhs) {
-            return lhs.size() == rhs.size() && std::equal(lhs.begin(), lhs.end(), rhs.begin());
         }
 
         /*!
          * \brief Вставка ребра в узел (без переприсваивания)
          * @param key
          * @param weight
-         * @return std::pair<iterator, bool>
+         * @return Значение std::pair<iterator, bool>, где итератор показывает на элемент узла, откуда идёт ребро, bool - true (если произошла вставка), false - иначе.
          */
         std::pair<iterator, bool> insert_edge(key_type key, weight_type weight) {
             return edges.insert(std::make_pair(key, weight));
@@ -182,7 +187,7 @@ class Graph {
          * \brief Вставка ребра в узел (с переприсваиванием)
          * @param key
          * @param weight
-         * @return std::pair<iterator, bool>
+         * @return Значение std::pair<iterator, bool>, где итератор показывает на элемент узла, откуда идёт ребро, bool - true (если произошла вставка), false - иначе.
          */
         std::pair<iterator, bool> insert_or_assign_edge(key_type key, weight_type weight) {
             return edges.insert_or_assign(key, weight);
@@ -191,7 +196,7 @@ class Graph {
         /*!
          * \brief Удаление ребра из узла
          * @param key
-         * @return bool
+         * @return bool - false если такого ребра нет, true - иначе.
          */
         bool erase_edge(key_type key) {
             if (edges.find(key) == edges.end()) {
@@ -225,14 +230,14 @@ public:
     /*!
      * \brief Оператор копирующего присваивания
      * @param rhs
-     * @return
+     * @return Граф после присваивания.
      */
      Graph<key_type, value_type, weight_type>& operator=(const Graph<key_type, value_type, weight_type>& rhs) = default;
 
     /*!
      * \brief Оператор перемещающего присваивания
      * @param rhs
-     * @return
+     * @return Граф после присваивания.
      */
     Graph<key_type, value_type, weight_type>& operator=(Graph<key_type, value_type, weight_type>&& rhs) noexcept = default;
 
@@ -240,14 +245,14 @@ public:
 
     /*!
      * \brief Проверка на пустоту графа
-     * @return
+     * @return bool - true, если граф пустой, false - иначе.
      */
     constexpr bool empty() const noexcept {
         return graph.empty();
     }
     /*!
      * \brief Количество узлов в графе
-     * @return
+     * @return Размер графа (число узлов).
      */
     size_t size() const noexcept {
         return graph.size();
@@ -279,47 +284,53 @@ public:
         rhs = tmp;
     }
 
+    /*!
+     * \brief Псевдоним для итератора графа
+     */
     typedef typename std::map<key_type, Node>::iterator iterator;
+    /*!
+     * \brief Псевдоним для константного итератора графа
+     */
     typedef typename std::map<key_type, Node>::const_iterator const_iterator;
 
     /*!
      * \brief Итератор begin
-     * @return iterator
+     * @return Итератор, показывающий на первый элемент графа.
      */
     iterator begin() noexcept {
         return graph.begin();
     }
     /*!
      * \brief Итератор end
-     * @return iterator
+     * @return Итератор, показывающий на элемент, следующий за последним элементом графа.
      */
     iterator end() noexcept {
         return graph.end();
     }
     /*!
      * \brief Итератор begin (const версия)
-     * @return iterator
+     * @return Константный итератор, показывающий на первый элемент графа.
      */
     const_iterator begin() const noexcept {
         return graph.begin();
     }
     /*!
      * \brief Итератор end (const версия)
-     * @return iterator
+     * @return Константный итератор, показывающий на элемент, следующий за последним элементом графа.
      */
     const_iterator end() const noexcept {
         return graph.end();
     }
     /*!
      * \brief Константный итератор cbegin
-     * @return const_iterator
+     * @return Константный итератор, показывающий на первый элемент графа.
      */
     const_iterator cbegin() const {
         return graph.cbegin();
     }
     /*!
      * \brief Константный итератор cend
-     * @return const_iterator
+     * @return Константный итератор, показывающий на элемент, следующий за последним элементом графа.
      */
     const_iterator cend() const {
         return graph.cend();
@@ -330,7 +341,7 @@ public:
     /*!
      * \brief Степень (входящие рёбра)
      * @param key
-     * @return size_t
+     * @return Степень узла по входящим рёбрам.
      */
     size_t degree_in(key_type key) {
         if (graph.find(key) == graph.end()) {
@@ -350,7 +361,7 @@ public:
     /*!
      * \brief Степень (выходящие рёбра)
      * @param key
-     * @return size_t
+     * @return Степень узла по выходящим рёбрам.
      */
     size_t degree_out(key_type key) {
         if (graph.find(key) == graph.end()) {
@@ -362,7 +373,7 @@ public:
     /*!
      * \brief Проверка на наличие петли
      * @param key
-     * @return bool
+     * @return bool - true, если петля у узла есть, false - иначе.
      */
     bool loop(key_type key) {
         if (graph.find(key) == graph.end()) {
@@ -380,7 +391,7 @@ public:
     /*!
      * \brief Доступ к узлу по ключу
      * @param key
-     * @return Node&
+     * @return Узел с таким ключом из графа.
      */
     Node& operator[](key_type key) {
         if (graph.find(key) == graph.end()) {
@@ -394,7 +405,7 @@ public:
     /*!
      * \brief Доступ к узлу по ключу (const версия)
      * @param key
-     * @return const Node&
+     * @return Узел с таким ключом из графа.
      */
     const Node& operator[](key_type key) const {
         if (graph.find(key) == graph.end()) {
@@ -408,7 +419,7 @@ public:
     /*!
      * \brief Доступ к элементу по ключу
      * @param key
-     * @return Node&
+     * @return Узел с таким ключом из графа.
      */
     Node& at(key_type key) {
         if (graph.find(key) == graph.end()) {
@@ -422,7 +433,7 @@ public:
      * \brief Вставка узла (без переприсваивания)
      * @param key
      * @param val
-     * @return std::pair<iterator, bool>
+     * @return Значение std::pair<iterator, bool>, где итератор показывает на элемент графа, bool - true (если произошла вставка), false - иначе.
      */
     std::pair<iterator, bool> insert_node(key_type key, value_type val) {
         Node tmp;
@@ -434,7 +445,7 @@ public:
      * Вставка узла (с переприсваиванием)
      * @param key
      * @param val
-     * @return std::pair<iterator, bool>
+     * @return Значение std::pair<iterator, bool>, где итератор показывает на элемент графа, bool - true (если произошла вставка), false - иначе.
      */
     std::pair<iterator, bool> insert_or_assign_node(key_type key, value_type val) {
         if (graph.find(key) != graph.end()) {
@@ -451,9 +462,9 @@ public:
      * \brief Вставка ребра (без переприсваивания)
      * @param keys
      * @param weight
-     * @return std::pair<iterator, bool>
+     * @return Значение std::pair<iterator, bool>, где итератор показывает на элемент графа, откуда идёт ребро, bool - true (если произошла вставка), false - иначе.
      */
-    std::pair<typename std::map<key_type, weight_type>::iterator, bool> insert_edge(std::pair<key_type, key_type> keys, weight_type weight) {
+    std::pair<iterator, bool> insert_edge(std::pair<key_type, key_type> keys, weight_type weight) {
         key_type key_from = keys.first, key_to = keys.second;
         if (graph.find(key_from) == graph.end()) {
             throw std::logic_error("node referencing to key_from is not in the graph.\n");
@@ -463,16 +474,18 @@ public:
             throw std::logic_error("node referencing to key_to is not in the graph.\n");
         }
 
-        return graph[key_from].insert_edge(key_to, weight);
+        auto [key, flag] = graph[key_from].insert_or_assign_edge(key_to, weight);
+
+        return std::pair<iterator, bool>(graph.find(key_from), flag);
     }
 
     /*!
      * \brief Вставка ребра (с переприсваиванием)
      * @param keys
      * @param weight
-     * @return std::pair<iterator, bool>
+     * @return Значение std::pair<iterator, bool>, где итератор показывает на элемент графа, откуда идёт ребро, bool - true (если произошла вставка), false - иначе.
      */
-    std::pair<typename std::map<key_type, weight_type>::iterator, bool> insert_or_assign_edge(std::pair<key_type, key_type> keys, weight_type weight) {
+    std::pair<iterator, bool> insert_or_assign_edge(std::pair<key_type, key_type> keys, weight_type weight) {
         key_type key_from = keys.first, key_to = keys.second;
         if (graph.find(key_from) == graph.end()) {
             throw std::logic_error("node referencing to key_from is not in the graph.\n");
@@ -482,7 +495,9 @@ public:
             throw std::logic_error("node referencing to key_to is not in the graph.\n");
         }
 
-        return graph[key_from].insert_or_assign_edge(key_to, weight);
+        auto [key, flag] = graph[key_from].insert_or_assign_edge(key_to, weight);
+
+        return std::pair<iterator, bool>(graph.find(key_from), flag);
     }
 
     /*!
@@ -497,7 +512,7 @@ public:
     /*!
      * \brief Очистка рёбер, выходящих из узла
      * @param key
-     * @return bool
+     * @return Значение bool (false - если узел не найден, true - иначе).
      */
     bool erase_edges_go_from(key_type key) {
         if (graph.find(key) == graph.end()) {
@@ -511,7 +526,7 @@ public:
     /*!
      * \brief Очистка рёбер, входящих в узел
      * @param key
-     * @return bool
+     * @return Значение bool (false - если узел не найден, true - иначе).
      */
     bool erase_edges_go_to(key_type key) {
         if (graph.find(key) == graph.end()) {
@@ -527,7 +542,7 @@ public:
     /*!
      * \brief Удаление узла
      * @param key
-     * @return bool
+     * @return Значение bool (true, если узел найден и удалён, false - иначе).
      */
     bool erase_node(key_type key) {
         if (graph.find(key) == graph.end()) {
@@ -553,7 +568,7 @@ public:
  * @param graph
  * @param key_from
  * @param key_to
- * @return
+ * @return Возвращает длину кратчайшего пути между из вершины с клучом key_from в вершину с ключом key_to.
  */
 template<typename graph_t, typename weight_t, typename route_t, typename node_name_t>
 std::pair<weight_t, route_t> dijkstra(const graph_t& graph, node_name_t key_from, node_name_t key_to) {
