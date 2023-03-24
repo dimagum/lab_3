@@ -39,7 +39,7 @@ class Graph {
          * \brief Конструктор для значения в узле
          * @param other
          */
-        explicit Node(const value_type& other) {
+        Node(const value_type& other) {
             val = other;
         }
 
@@ -72,7 +72,7 @@ class Graph {
          * \brief Проверка на пустоту узла
          * @return bool - true если узел пустой, false - иначе.
          */
-        constexpr bool empty() const {
+        bool empty() const {
             return edges.empty();
         }
         /*!
@@ -144,14 +144,14 @@ class Graph {
          * \brief Итератор cbegin
          * @return Константный итератор, показывающий на первый элемент узла.
          */
-        const_iterator cbegin() const {
+        const_iterator cbegin() const noexcept {
             return edges.cbegin();
         }
         /*!
          * \brief Итератор cend
          * @return Константный итератор, показывающий на элемент, следующий за последним элементом узла.
          */
-        const_iterator cend() const {
+        const_iterator cend() const noexcept {
             return edges.cend();
         }
 
@@ -247,7 +247,7 @@ public:
      * \brief Проверка на пустоту графа
      * @return bool - true, если граф пустой, false - иначе.
      */
-    constexpr bool empty() const noexcept {
+    bool empty() const noexcept {
         return graph.empty();
     }
     /*!
@@ -455,7 +455,7 @@ public:
 
         Node tmp;
         tmp.value() = val;
-        return graph.emplace(key, tmp);
+        return graph.insert_or_assign(key, tmp);
     }
 
     /*!
@@ -474,7 +474,7 @@ public:
             throw std::logic_error("node referencing to key_to is not in the graph.\n");
         }
 
-        auto [key, flag] = graph[key_from].insert_or_assign_edge(key_to, weight);
+        auto [key, flag] = graph[key_from].insert_edge(key_to, weight);
 
         return std::pair<iterator, bool>(graph.find(key_from), flag);
     }
@@ -577,7 +577,6 @@ std::pair<weight_t, route_t> dijkstra(const graph_t& graph, node_name_t key_from
 
 
     route_t route;
-    weight_t route_weight;
 
     std::map<node_name_t, node_name_t> route_tmp;
 
@@ -585,8 +584,8 @@ std::pair<weight_t, route_t> dijkstra(const graph_t& graph, node_name_t key_from
 
     route_tmp[key_from] = std::numeric_limits<node_name_t>::max();
 
-    std::map<node_name_t, weight_t> d;
-    std::map<node_name_t, bool> used;
+    std::map<node_name_t, weight_t> d; // d[v]
+    std::map<node_name_t, bool> used;  // used[v] = true/false;
     for (auto [key, node] : graph) {
         d[key] = INF;
         used[key] = false;
@@ -596,7 +595,7 @@ std::pair<weight_t, route_t> dijkstra(const graph_t& graph, node_name_t key_from
     for (int i = 0; i < graph.size(); i++) {
         node_name_t v = -1;
 
-
+        // d[v] -> min, v: used[v] = false;
 
         for (auto [key, node] : graph) {
             if (!used[key] && (v == -1 || d[key] < d[v])) {
@@ -610,7 +609,7 @@ std::pair<weight_t, route_t> dijkstra(const graph_t& graph, node_name_t key_from
         used[v] = true;
 
         for (auto [to, len] : graph[v]) {
-            if ((std::numeric_limits<weight_t>::is_bounded) && len < 0) {
+            if (len < 0) {
                 throw std::logic_error("there are negative weights in the graph.\n");
             }
             if (d[v] + len < d[to]) {
@@ -634,11 +633,3 @@ std::pair<weight_t, route_t> dijkstra(const graph_t& graph, node_name_t key_from
 
     return std::pair<weight_t, route_t>(d[key_to], route);
 }
-
-template<typename graph_t, typename weight_t, typename route_out_iter_t, typename node_name_t>
-weight_t dijkstra_(const graph_t& graph, node_name_t key_from, node_name_t key_to, route_out_iter_t route_out_iter) {
-
-}
-
-
-
